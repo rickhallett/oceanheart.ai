@@ -1,0 +1,304 @@
+📂 /Users/oceanheart/Documents/code/clinical-tools/oceanheart.online
+┣━━ 📂 oceanheart-ai
+┃   ┣━━ 📂 app
+┃   ┃   ┣━━ 📂 alembic
+┃   ┃   ┃   ┣━━ 📂 versions
+┃   ┃   ┃   ┣━━ env.py (2.5 kB)
+┃   ┃   ┃   ┗━━ script.py.mako (635 bytes)
+┃   ┃   ┣━━ 📂 api
+┃   ┃   ┃   ┣━━ dependencies.py (567 bytes)
+┃   ┃   ┃   ┣━━ endpoint.py (2.3 kB)
+┃   ┃   ┃   ┣━━ event_schema.py (1.4 kB)
+┃   ┃   ┃   ┗━━ router.py (329 bytes)
+┃   ┃   ┣━━ 📂 config
+┃   ┃   ┃   ┣━━ celery_config.py (1.0 kB)
+┃   ┃   ┃   ┣━━ database_config.py (1.2 kB)
+┃   ┃   ┃   ┣━━ llm_config.py (1.2 kB)
+┃   ┃   ┃   ┗━━ settings.py (658 bytes)
+┃   ┃   ┣━━ 📂 core
+┃   ┃   ┃   ┣━━ base.py (1.9 kB)
+┃   ┃   ┃   ┣━━ llm.py (2.7 kB)
+┃   ┃   ┃   ┣━━ pipeline.py (5.4 kB)
+┃   ┃   ┃   ┣━━ router.py (2.1 kB)
+┃   ┃   ┃   ┣━━ schema.py (2.1 kB)
+┃   ┃   ┃   ┣━━ task.py (1.3 kB)
+┃   ┃   ┃   ┗━━ validate.py (4.5 kB)
+┃   ┃   ┣━━ 📂 database
+┃   ┃   ┃   ┣━━ database_utils.py (691 bytes)
+┃   ┃   ┃   ┣━━ event.py (1.8 kB)
+┃   ┃   ┃   ┣━━ repository.py (1.6 kB)
+┃   ┃   ┃   ┗━━ session.py (392 bytes)
+┃   ┃   ┣━━ 📂 pipelines
+┃   ┃   ┃   ┣━━ 📂 customer
+┃   ┃   ┃   ┃   ┣━━ analyze_ticket.py (2.4 kB)
+┃   ┃   ┃   ┃   ┣━━ escalate_ticket.py (868 bytes)
+┃   ┃   ┃   ┃   ┣━━ generate_response.py (3.0 kB)
+┃   ┃   ┃   ┃   ┣━━ process_invoice.py (451 bytes)
+┃   ┃   ┃   ┃   ┣━━ route_ticket.py (1.2 kB)
+┃   ┃   ┃   ┃   ┗━━ send_reply.py (266 bytes)
+┃   ┃   ┃   ┣━━ 📂 internal
+┃   ┃   ┃   ┃   ┣━━ analyze_ticket.py (2.2 kB)
+┃   ┃   ┃   ┃   ┣━━ generate_response.py (2.8 kB)
+┃   ┃   ┃   ┃   ┣━━ get_appointments.py (366 bytes)
+┃   ┃   ┃   ┃   ┗━━ route_ticket.py (964 bytes)
+┃   ┃   ┃   ┣━━ customer_pipeline.py (1.5 kB)
+┃   ┃   ┃   ┣━━ internal_pipeline.py (1.4 kB)
+┃   ┃   ┃   ┗━━ registry.py (2.1 kB)
+┃   ┃   ┣━━ 📂 prompts
+┃   ┃   ┃   ┣━━ customer_ticket_response.j2 (1.6 kB)
+┃   ┃   ┃   ┣━━ internal_ticket_response.j2 (1.7 kB)
+┃   ┃   ┃   ┗━━ ticket_analysis.j2 (1.4 kB)
+┃   ┃   ┣━━ 📂 services
+┃   ┃   ┃   ┣━━ llm_factory.py (6.3 kB)
+┃   ┃   ┃   ┣━━ prompt_loader.py (4.0 kB)
+┃   ┃   ┃   ┗━━ vector_store.py (13.7 kB)
+┃   ┃   ┣━━ 📂 tasks
+┃   ┃   ┃   ┗━━ tasks.py (1.7 kB)
+┃   ┃   ┣━━ 📂 utils
+┃   ┃   ┃   ┣━━ event_factory.py (3.3 kB)
+┃   ┃   ┃   ┣━━ insert_vectors.py (2.3 kB)
+┃   ┃   ┃   ┣━━ timer.py (359 bytes)
+┃   ┃   ┃   ┗━━ visualize_pipeline.py (2.7 kB)
+┃   ┃   ┣━━ alembic.ini (3.5 kB)
+┃   ┃   ┣━━ main.py (128 bytes)
+┃   ┃   ┣━━ makemigration.sh (232 bytes)
+┃   ┃   ┣━━ migrate.sh (94 bytes)
+┃   ┃   ┣━━ pyproject.toml (293 bytes)
+┃   ┃   ┣━━ requirements.txt (257 bytes)
+┃   ┃   ┗━━ start.sh (165 bytes)
+┃   ┣━━ 📂 data
+┃   ┃   ┗━━ dataset.json (7.6 kB)
+┃   ┣━━ 📂 docker
+┃   ┃   ┣━━ Caddyfile (139 bytes)
+┃   ┃   ┣━━ docker-compose.yml (1.7 kB)
+┃   ┃   ┣━━ Dockerfile.api (419 bytes)
+┃   ┃   ┣━━ Dockerfile.celery (627 bytes)
+┃   ┃   ┣━━ logs.sh (82 bytes)
+┃   ┃   ┗━━ start.sh (379 bytes)
+┃   ┣━━ 📂 docs
+┃   ┃   ┣━━ 📂 01-getting-started
+┃   ┃   ┃   ┣━━ 01-introduction.md (2.9 kB)
+┃   ┃   ┃   ┣━━ 02-installation.md (2.7 kB)
+┃   ┃   ┃   ┗━━ 03-quick-start.md (7.1 kB)
+┃   ┃   ┣━━ 📂 02-architecture
+┃   ┃   ┃   ┣━━ 01-overview.md (5.8 kB)
+┃   ┃   ┃   ┣━━ 02-core-system.md (6.1 kB)
+┃   ┃   ┃   ┣━━ 03-pipeline-design.md (11.9 kB)
+┃   ┃   ┃   ┣━━ 04-worker-system.md (5.1 kB)
+┃   ┃   ┃   ┗━━ 05-diagram.md (3.3 kB)
+┃   ┃   ┣━━ 📂 03-core-components
+┃   ┃   ┃   ┣━━ 01-api-reference.md (5.0 kB)
+┃   ┃   ┃   ┣━━ 02-database.md (6.3 kB)
+┃   ┃   ┃   ┣━━ 03-vector-store.md (4.5 kB)
+┃   ┃   ┃   ┣━━ 04-llm-factory.md (6.8 kB)
+┃   ┃   ┃   ┗━━ 05-prompt-management.md (5.4 kB)
+┃   ┃   ┣━━ 📂 04-guides
+┃   ┃   ┃   ┣━━ 01-configuration.md (4.8 kB)
+┃   ┃   ┃   ┣━━ 02-docker-infrastructure.md (4.4 kB)
+┃   ┃   ┃   ┣━━ 03-testing-events.md (5.2 kB)
+┃   ┃   ┃   ┣━━ 04-deployment.md (4.6 kB)
+┃   ┃   ┃   ┣━━ 05-troubleshooting.md (1.4 kB)
+┃   ┃   ┃   ┗━━ 06-development-workflow.md (5.3 kB)
+┃   ┃   ┣━━ 📂 05-concepts
+┃   ┃   ┃   ┗━━ 01-philosopy.md (4.8 kB)
+┃   ┃   ┗━━ README.md (1.9 kB)
+┃   ┣━━ 📂 playground
+┃   ┃   ┣━━ llm_playground.py (879 bytes)
+┃   ┃   ┣━━ pipeline_playground.py (1.8 kB)
+┃   ┃   ┣━━ prompt_playground.py (827 bytes)
+┃   ┃   ┣━━ rag_playground.py (839 bytes)
+┃   ┃   ┗━━ visualize_pipeline.py (401 bytes)
+┃   ┣━━ 📂 requests
+┃   ┃   ┣━━ 📂 events
+┃   ┃   ┃   ┣━━ invoice.json (363 bytes)
+┃   ┃   ┃   ┣━━ policy_question.json (469 bytes)
+┃   ┃   ┃   ┣━━ product.json (470 bytes)
+┃   ┃   ┃   ┣━━ prompt_injection.json (422 bytes)
+┃   ┃   ┃   ┣━━ refund.json (799 bytes)
+┃   ┃   ┃   ┗━━ service_desk.json (440 bytes)
+┃   ┃   ┗━━ send_event.py (1.5 kB)
+┃   ┣━━ LICENSE (3.1 kB)
+┃   ┣━━ pyrightconfig.json (29 bytes)
+┃   ┗━━ README.md (0 bytes)
+┣━━ 📂 oceanheart-api
+┃   ┣━━ 📂 node_modules
+┃   ┣━━ 📂 src
+┃   ┃   ┗━━ index.ts (129 bytes)
+┃   ┣━━ bun.lock (1.3 kB)
+┃   ┣━━ package.json (185 bytes)
+┃   ┣━━ README.md (106 bytes)
+┃   ┗━━ tsconfig.json (108 bytes)
+┣━━ 📂 oceanheart-sass-portal
+┃   ┣━━ 📂 app
+┃   ┃   ┣━━ 📂 (dashboard)
+┃   ┃   ┃   ┣━━ 📂 dashboard
+┃   ┃   ┃   ┃   ┣━━ 📂 activity
+┃   ┃   ┃   ┃   ┃   ┗━━ page.tsx (4.2 kB)
+┃   ┃   ┃   ┃   ┣━━ 📂 general
+┃   ┃   ┃   ┃   ┃   ┗━━ page.tsx (3.2 kB)
+┃   ┃   ┃   ┃   ┣━━ 📂 security
+┃   ┃   ┃   ┃   ┃   ┗━━ page.tsx (5.5 kB)
+┃   ┃   ┃   ┃   ┣━━ invite-team.tsx (3.0 kB)
+┃   ┃   ┃   ┃   ┣━━ layout.tsx (2.6 kB)
+┃   ┃   ┃   ┃   ┣━━ page.tsx (429 bytes)
+┃   ┃   ┃   ┃   ┗━━ settings.tsx (4.1 kB)
+┃   ┃   ┃   ┣━━ 📂 pricing
+┃   ┃   ┃   ┃   ┣━━ page.tsx (2.9 kB)
+┃   ┃   ┃   ┃   ┗━━ submit-button.tsx (699 bytes)
+┃   ┃   ┃   ┣━━ layout.tsx (3.3 kB)
+┃   ┃   ┃   ┣━━ page.tsx (8.2 kB)
+┃   ┃   ┃   ┗━━ terminal.tsx (2.1 kB)
+┃   ┃   ┣━━ 📂 (login)
+┃   ┃   ┃   ┣━━ 📂 sign-in
+┃   ┃   ┃   ┃   ┗━━ page.tsx (187 bytes)
+┃   ┃   ┃   ┣━━ 📂 sign-up
+┃   ┃   ┃   ┃   ┗━━ page.tsx (187 bytes)
+┃   ┃   ┃   ┣━━ actions.ts (11.1 kB)
+┃   ┃   ┃   ┗━━ login.tsx (5.5 kB)
+┃   ┃   ┣━━ 📂 api
+┃   ┃   ┃   ┗━━ 📂 stripe
+┃   ┃   ┃       ┣━━ 📂 checkout
+┃   ┃   ┃       ┃   ┗━━ route.ts (2.8 kB)
+┃   ┃   ┃       ┗━━ 📂 webhook
+┃   ┃   ┃           ┗━━ route.ts (1.1 kB)
+┃   ┃   ┣━━ favicon.ico (25.9 kB)
+┃   ┃   ┣━━ globals.css (8.0 kB)
+┃   ┃   ┣━━ layout.tsx (875 bytes)
+┃   ┃   ┗━━ not-found.tsx (1.0 kB)
+┃   ┣━━ 📂 components
+┃   ┃   ┗━━ 📂 ui
+┃   ┃       ┣━━ avatar.tsx (1.4 kB)
+┃   ┃       ┣━━ button.tsx (1.8 kB)
+┃   ┃       ┣━━ card.tsx (1.8 kB)
+┃   ┃       ┣━━ dropdown-menu.tsx (7.4 kB)
+┃   ┃       ┣━━ input.tsx (801 bytes)
+┃   ┃       ┣━━ label.tsx (724 bytes)
+┃   ┃       ┗━━ radio-group.tsx (1.4 kB)
+┃   ┣━━ 📂 lib
+┃   ┃   ┣━━ 📂 auth
+┃   ┃   ┃   ┣━━ index.tsx (695 bytes)
+┃   ┃   ┃   ┣━━ middleware.ts (2.0 kB)
+┃   ┃   ┃   ┗━━ session.ts (1.6 kB)
+┃   ┃   ┣━━ 📂 db
+┃   ┃   ┃   ┣━━ 📂 migrations
+┃   ┃   ┃   ┃   ┣━━ 📂 meta
+┃   ┃   ┃   ┃   ┃   ┣━━ 0000_snapshot.json (9.8 kB)
+┃   ┃   ┃   ┃   ┃   ┗━━ _journal.json (212 bytes)
+┃   ┃   ┃   ┃   ┗━━ 0000_soft_the_anarchist.sql (3.3 kB)
+┃   ┃   ┃   ┣━━ drizzle.ts (376 bytes)
+┃   ┃   ┃   ┣━━ queries.ts (3.0 kB)
+┃   ┃   ┃   ┣━━ schema.ts (4.5 kB)
+┃   ┃   ┃   ┣━━ seed.ts (1.8 kB)
+┃   ┃   ┃   ┗━━ setup.ts (6.3 kB)
+┃   ┃   ┣━━ 📂 payments
+┃   ┃   ┃   ┣━━ actions.ts (536 bytes)
+┃   ┃   ┃   ┗━━ stripe.ts (4.8 kB)
+┃   ┃   ┗━━ utils.ts (166 bytes)
+┃   ┣━━ 📂 node_modules
+┃   ┣━━ bun.lock (67.1 kB)
+┃   ┣━━ components.json (423 bytes)
+┃   ┣━━ docker-compose.yml (330 bytes)
+┃   ┣━━ drizzle.config.ts (228 bytes)
+┃   ┣━━ LICENSE (1.1 kB)
+┃   ┣━━ middleware.ts (1.4 kB)
+┃   ┣━━ next-env.d.ts (211 bytes)
+┃   ┣━━ next.config.ts (166 bytes)
+┃   ┣━━ package.json (1.5 kB)
+┃   ┣━━ pnpm-lock.yaml (96.7 kB)
+┃   ┣━━ postcss.config.mjs (70 bytes)
+┃   ┣━━ README.md (3.6 kB)
+┃   ┗━━ tsconfig.json (686 bytes)
+┣━━ 📂 oceanheart-supabase
+┃   ┣━━ 📂 supabase
+┃   ┗━━ config.toml (10.6 kB)
+┣━━ 📂 oceanheart-ui
+┃   ┣━━ 📂 node_modules
+┃   ┣━━ 📂 public
+┃   ┃   ┗━━ vite.svg (1.5 kB)
+┃   ┣━━ 📂 src
+┃   ┃   ┣━━ 📂 app
+┃   ┃   ┃   ┣━━ 📂 dashboard
+┃   ┃   ┃   ┃   ┗━━ page.tsx (1.9 kB)
+┃   ┃   ┃   ┗━━ 📂 login
+┃   ┃   ┃       ┗━━ page.tsx (1.1 kB)
+┃   ┃   ┣━━ 📂 assets
+┃   ┃   ┃   ┗━━ react.svg (4.1 kB)
+┃   ┃   ┣━━ 📂 components
+┃   ┃   ┃   ┣━━ 📂 ui
+┃   ┃   ┃   ┃   ┣━━ accordion.tsx (2.1 kB)
+┃   ┃   ┃   ┃   ┣━━ alert-dialog.tsx (3.9 kB)
+┃   ┃   ┃   ┃   ┣━━ alert.tsx (1.6 kB)
+┃   ┃   ┃   ┃   ┣━━ aspect-ratio.tsx (266 bytes)
+┃   ┃   ┃   ┃   ┣━━ avatar.tsx (1.1 kB)
+┃   ┃   ┃   ┃   ┣━━ badge.tsx (1.5 kB)
+┃   ┃   ┃   ┃   ┣━━ breadcrumb.tsx (2.4 kB)
+┃   ┃   ┃   ┃   ┣━━ button.tsx (1.9 kB)
+┃   ┃   ┃   ┃   ┣━━ calendar.tsx (2.8 kB)
+┃   ┃   ┃   ┃   ┣━━ card.tsx (1.8 kB)
+┃   ┃   ┃   ┃   ┣━━ carousel.tsx (5.6 kB)
+┃   ┃   ┃   ┃   ┣━━ chart.tsx (10.5 kB)
+┃   ┃   ┃   ┃   ┣━━ checkbox.tsx (1.1 kB)
+┃   ┃   ┃   ┃   ┣━━ collapsible.tsx (786 bytes)
+┃   ┃   ┃   ┃   ┣━━ command.tsx (4.7 kB)
+┃   ┃   ┃   ┃   ┣━━ context-menu.tsx (8.0 kB)
+┃   ┃   ┃   ┃   ┣━━ dialog.tsx (3.8 kB)
+┃   ┃   ┃   ┃   ┣━━ drawer.tsx (3.9 kB)
+┃   ┃   ┃   ┃   ┣━━ dropdown-menu.tsx (8.0 kB)
+┃   ┃   ┃   ┃   ┣━━ form.tsx (3.7 kB)
+┃   ┃   ┃   ┃   ┣━━ hover-card.tsx (1.4 kB)
+┃   ┃   ┃   ┃   ┣━━ input-otp.tsx (2.1 kB)
+┃   ┃   ┃   ┃   ┣━━ input.tsx (1.3 kB)
+┃   ┃   ┃   ┃   ┣━━ label.tsx (587 bytes)
+┃   ┃   ┃   ┃   ┣━━ menubar.tsx (8.2 kB)
+┃   ┃   ┃   ┃   ┣━━ navigation-menu.tsx (6.6 kB)
+┃   ┃   ┃   ┃   ┣━━ pagination.tsx (2.7 kB)
+┃   ┃   ┃   ┃   ┣━━ popover.tsx (1.6 kB)
+┃   ┃   ┃   ┃   ┣━━ progress.tsx (740 bytes)
+┃   ┃   ┃   ┃   ┣━━ radio-group.tsx (1.4 kB)
+┃   ┃   ┃   ┃   ┣━━ resizable.tsx (2.0 kB)
+┃   ┃   ┃   ┃   ┣━━ scroll-area.tsx (1.7 kB)
+┃   ┃   ┃   ┃   ┣━━ select.tsx (5.9 kB)
+┃   ┃   ┃   ┃   ┣━━ separator.tsx (690 bytes)
+┃   ┃   ┃   ┃   ┣━━ sheet.tsx (4.1 kB)
+┃   ┃   ┃   ┃   ┣━━ sidebar.tsx (21.9 kB)
+┃   ┃   ┃   ┃   ┣━━ skeleton.tsx (280 bytes)
+┃   ┃   ┃   ┃   ┣━━ slider.tsx (2.0 kB)
+┃   ┃   ┃   ┃   ┣━━ sonner.tsx (851 bytes)
+┃   ┃   ┃   ┃   ┣━━ switch.tsx (1.1 kB)
+┃   ┃   ┃   ┃   ┣━━ table.tsx (2.4 kB)
+┃   ┃   ┃   ┃   ┣━━ tabs.tsx (2.0 kB)
+┃   ┃   ┃   ┃   ┣━━ textarea.tsx (1.0 kB)
+┃   ┃   ┃   ┃   ┣━━ toggle-group.tsx (1.9 kB)
+┃   ┃   ┃   ┃   ┣━━ toggle.tsx (1.5 kB)
+┃   ┃   ┃   ┃   ┗━━ tooltip.tsx (1.8 kB)
+┃   ┃   ┃   ┣━━ app-sidebar.tsx (3.7 kB)
+┃   ┃   ┃   ┣━━ background-paths.tsx (4.6 kB)
+┃   ┃   ┃   ┣━━ login-form.tsx (2.9 kB)
+┃   ┃   ┃   ┣━━ nav-main.tsx (2.2 kB)
+┃   ┃   ┃   ┣━━ nav-projects.tsx (2.4 kB)
+┃   ┃   ┃   ┣━━ nav-secondary.tsx (917 bytes)
+┃   ┃   ┃   ┣━━ nav-user.tsx (3.4 kB)
+┃   ┃   ┃   ┗━━ next-blocks.tsx (4.6 kB)
+┃   ┃   ┣━━ 📂 hooks
+┃   ┃   ┃   ┗━━ use-mobile.ts (565 bytes)
+┃   ┃   ┣━━ 📂 lib
+┃   ┃   ┃   ┗━━ utils.ts (166 bytes)
+┃   ┃   ┣━━ App.css (606 bytes)
+┃   ┃   ┣━━ App.tsx (903 bytes)
+┃   ┃   ┣━━ index.css (5.8 kB)
+┃   ┃   ┣━━ main.tsx (230 bytes)
+┃   ┃   ┗━━ vite-env.d.ts (38 bytes)
+┃   ┣━━ bun.lock (118.2 kB)
+┃   ┣━━ components.json (423 bytes)
+┃   ┣━━ eslint.config.js (734 bytes)
+┃   ┣━━ index.html (418 bytes)
+┃   ┣━━ package-lock.json (125.1 kB)
+┃   ┣━━ package.json (2.5 kB)
+┃   ┣━━ README.md (1.6 kB)
+┃   ┣━━ tsconfig.app.json (795 bytes)
+┃   ┣━━ tsconfig.json (249 bytes)
+┃   ┣━━ tsconfig.node.json (593 bytes)
+┃   ┗━━ vite.config.ts (300 bytes)
+┣━━ tree.html (105.6 kB)
+┣━━ tree.py (3.1 kB)
+┗━━ tree.txt (15.7 kB)
