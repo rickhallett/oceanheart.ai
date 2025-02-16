@@ -22,7 +22,7 @@ const Hero = () => {
           oceanheart.ai helps therapists do more of what they love most: <span className="italic text-blue-400">helping people</span>
         </p>
         <button className="btn btn-primary btn-wide">
-          Get {config.appName}
+          Get <span className="lowercase">{config.appName}</span>
         </button>
 
         <TestimonialsAvatars priority={true} />

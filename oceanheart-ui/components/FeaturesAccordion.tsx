@@ -3,11 +3,12 @@
 import { useState, useRef } from "react";
 import type { JSX } from "react";
 import Image from "next/image";
+import { FaBook, FaBrain, FaChartLine, FaCloud, FaFile, FaLock } from "react-icons/fa"
 
 interface Feature {
   title: string;
   description: string;
-  type?: "video" | "image";
+  type?: "video" | "image" | "svg";
   path?: string;
   format?: string;
   alt?: string;
@@ -19,137 +20,55 @@ const features = [
     title: "AI-Powered Insights",
     description:
       "Automate note analysis, formulation, and treatment suggestions to enhance therapeutic effectiveness.",
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 15v3m0-15v3m8.485 4.515l-2.121 2.121M5.636 5.636l2.121 2.121m12.728 0l-2.121-2.121M5.636 18.364l2.121-2.121"
-        />
-      </svg>
-    ),
+    svg: <FaBrain />,
+    type: "image",
+    format: "webp",
+    path: "/keyboard.webp"
   },
   {
     title: "Therapy Blueprint Cloud Service",
     description:
       "Long gone are the days when precious insights were lost on scraps of paper. Our cloud service ensures your therapy blueprints are safe and accessible from anywhere, so your clients can continue to grow after their final session.",
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M6 4h12M6 8h12M6 12h12M6 16h12"
-        />
-      </svg>
-    ),
+    svg: <FaCloud />,
+    type: "image",
+    format: "avif",
+    path: "/noid.avif"
   },
   {
     title: "Session Documentation",
     description:
       "Effortlessly create, organize, and access session notes, treatment plans, and progress tracking. Convert recordings into notes and notes into clinical grade documents.",
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M7 7h10M7 11h10M7 15h10"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"
-        />
-      </svg>
-    ),
+    svg: <FaFile />,
+    type: "image",
+    format: "jpg",
+    path: "/handshake.jpg"
   },
   {
     title: "Secure Client Management",
     description:
       "Protect client data with industry-standard encryption and secure cloud storage.",
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 11c1.657 0 3-1.343 3-3V5a3 3 0 00-6 0v3c0 1.657 1.343 3 3 3z"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M6 11h12a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6a2 2 0 012-2z"
-        />
-      </svg>
-    ),
+    svg: <FaLock />,
+    type: "image",
+    format: "webp",
+    path: "/phonelock.webp"
   },
   {
     title: "Progress Visualization",
     description:
       "Visualize therapeutic progress through clean, intuitive data visualizations. Share these with your clients make therapy more tangible",
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4 16v4m4-8v8m4-12v12m4-4v4"
-        />
-      </svg>
-    ),
+    svg: <FaChartLine />,
+    type: "image",
+    format: "avif",
+    path: "/mind-cloud.avif"
   },
   {
     title: "Resource Library",
     description:
       "Access and share a rich collection of therapeutic resources, exercises, and metaphors, automaticallycustomised for each individual",
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M6 4h12M6 8h12M6 12h12M6 16h12"
-        />
-      </svg>
-    ),
+    svg: <FaBook />,
+    type: "image",
+    format: "jpg",
+    path: "/universe.jpg"
   },
 
 
@@ -241,6 +160,8 @@ const Media = ({ feature }: { feature: Feature }) => {
         height={size.height}
       />
     );
+  } else if (type === "svg") {
+    return <div className={`${style} !border-none`}><FaBrain /></div>;
   } else {
     return <div className={`${style} !border-none`}></div>;
   }

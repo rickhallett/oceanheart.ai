@@ -44,16 +44,16 @@ const Problem = () => {
     <section className="bg-neutral text-neutral-content">
       <div className="max-w-7xl mx-auto px-8 py-16 md:py-32 text-center">
         <h2 className="max-w-3xl mx-auto font-extrabold text-4xl md:text-5xl tracking-tight mb-6 md:mb-12">
-          45% of therapists report <a className="text-yellow-700 underline" href="https://www.apa.org/monitor/2023/11/taking-a-break-from-practice" target="_blank" rel="noopener noreferrer">feeling burnt out</a>
+          45% of therapists report <a className="text-secondary underline" href="https://www.apa.org/monitor/2023/11/taking-a-break-from-practice" target="_blank" rel="noopener noreferrer">feeling burnt out</a>
         </h2>
         <p className="max-w-xl mx-auto text-lg opacity-90 leading-relaxed mb-6 md:mb-16">
           Clients, note keeping, case management, continual learning... There&apos;s never enough time.
         </p>
         <p className="max-w-xl mx-auto text-lg opacity-90 leading-relaxed mb-6 md:mb-16">
-          <a className="text-orange-700 underline" href="https://www.apa.org/monitor/2023/09/many-psychologists-have-waitlist" target="_blank" rel="noopener noreferrer">Almost half</a> of all psychologists have a waiting list...
+          <a className="text-accent underline" href="https://www.apa.org/monitor/2023/09/many-psychologists-have-waitlist" target="_blank" rel="noopener noreferrer">Almost half</a> of all psychologists have a waiting list...
         </p>
         <p className="max-w-xl mx-auto text-lg opacity-90 leading-relaxed mb-6 md:mb-20">
-          ...and people <a className="text-red-700 underline" href="https://www.apa.org/pubs/reports/practitioner/2023-psychologist-reach-limits" target="_blank" rel="noopener noreferrer">are getting worse</a>.
+          ...and people <a className="text-error underline" href="https://www.apa.org/pubs/reports/practitioner/2023-psychologist-reach-limits" target="_blank" rel="noopener noreferrer">are getting worse</a>.
         </p>
 
         <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-6">
