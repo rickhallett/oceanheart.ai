@@ -47,5 +47,14 @@
     "tailwindcss-react-aria-components": "1.2.0",
     "typescript": "^5.7.3",
     "zod": "^3.24.1"
+  },
+  "name": "oceanheart-ui-portal",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
