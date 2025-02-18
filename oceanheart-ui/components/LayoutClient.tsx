@@ -30,7 +30,7 @@ const CrispChat = (): null => {
       }
     };
     getUser();
-  }, []);
+  }, [supabase.auth]);
 
   useEffect(() => {
     if (config?.crisp?.id) {

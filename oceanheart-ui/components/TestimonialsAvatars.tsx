@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ReactNode } from "react";
 import { FaRegFaceGrin } from "react-icons/fa6";
 import { FaRegFaceGrinBeam } from "react-icons/fa6";
@@ -39,7 +38,7 @@ const getRandomAvatar = () => {
   return avatars[Math.floor(Math.random() * avatars.length)];
 };
 
-const TestimonialsAvatars = ({ priority }: { priority?: boolean }) => {
+const TestimonialsAvatars = () => {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-3">
       {/* TESTIMONIALS */}

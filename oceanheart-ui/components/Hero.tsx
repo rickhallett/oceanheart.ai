@@ -25,7 +25,7 @@ const Hero = () => {
           Get <span className="lowercase">{config.appName}</span>
         </button>
 
-        <TestimonialsAvatars priority={true} />
+        <TestimonialsAvatars />
       </div>
       <div className="lg:w-3/4">
         <Image
