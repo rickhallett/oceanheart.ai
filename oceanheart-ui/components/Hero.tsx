@@ -29,7 +29,7 @@ const Hero = () => {
       </div>
       <div className="lg:w-3/4">
         <Image
-          src="/Transparent Logo.png"
+          src="/images/Transparent Logo.png"
           alt="Product Demo"
           className="w-full"
           priority={true}
