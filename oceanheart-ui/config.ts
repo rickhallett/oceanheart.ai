@@ -7,7 +7,7 @@ const config = {
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription: "Welcome to Therapy 2.0",
   // REQUIRED (no https://, not trailing slash at the end, just the naked domain)
-  domainName: "www.oceanheart.online",
+  domainName: "www.oceanheart.ai",
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (resend.supportEmail) otherwise customer support won't work.
     id: "",
