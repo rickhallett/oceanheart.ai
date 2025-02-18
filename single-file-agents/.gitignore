@@ -1,0 +1,14 @@
+.aider*
+session_dir/
+
+data/*
+!data/mock.json
+!data/mock.db
+!data/mock.sqlite
+!data/analytics.json
+!data/analytics.db
+!data/analytics.sqlite
+
+specs/
+
+patterns.log
