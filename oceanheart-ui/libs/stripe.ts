@@ -30,7 +30,7 @@ export const createCheckout = async ({
 }: CreateCheckoutParams): Promise<string> => {
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-      apiVersion: "2023-08-16", // TODO: update this when Stripe updates their API
+      apiVersion: "2025-01-27.acacia", // TODO: update this when Stripe updates their API
       typescript: true,
     });
 
@@ -70,10 +70,10 @@ export const createCheckout = async ({
       ],
       discounts: couponId
         ? [
-            {
-              coupon: couponId,
-            },
-          ]
+          {
+            coupon: couponId,
+          },
+        ]
         : [],
       success_url: successUrl,
       cancel_url: cancelUrl,
