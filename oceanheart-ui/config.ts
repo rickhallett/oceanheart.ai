@@ -5,8 +5,7 @@ const config = {
   // REQUIRED
   appName: "oceanheart.ai",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
-  appDescription:
-    "Welcome to Therapy 2.0",
+  appDescription: "Welcome to Therapy 2.0",
   // REQUIRED (no https://, not trailing slash at the end, just the naked domain)
   domainName: "www.oceanheart.online",
   crisp: {
@@ -22,8 +21,8 @@ const config = {
         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
         priceId:
           process.env.NODE_ENV === "development"
-            ? "price_1Niyy5AxyNprDp7iZIqEyD2h"
-            : "price_456",
+            ? "prod_RmrRHSTnDtellj"
+            : "prod_RmrRHSTnDtellj",
         //  REQUIRED - Name of the plan, displayed on the pricing page
         name: "First Movers",
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
@@ -67,7 +66,7 @@ const config = {
           { name: "Discord Community Access" },
           // { name: "Bolt on additional modules individually for $49" }
         ],
-        availableFrom: "2025-05-31"
+        availableFrom: "2025-05-31",
       },
       {
         priceId:
@@ -89,7 +88,7 @@ const config = {
           { name: "Priority Support" },
           // { name: "Bolt on additional modules individually for $29" }
         ],
-        availableFrom: "2025-11-30"
+        availableFrom: "2025-11-30",
       },
     ],
   },
@@ -101,11 +100,11 @@ const config = {
   },
   resend: {
     // REQUIRED — Email 'From' field to be used when sending magic login links
-    fromNoReply: `ShipFast <noreply@resend.shipfa.st>`,
+    fromNoReply: `oceanheart <noreply@oceanheart.ai>`,
     // REQUIRED — Email 'From' field to be used when sending other emails, like abandoned carts, updates etc..
-    fromAdmin: `Marc at ShipFast <marc@resend.shipfa.st>`,
+    fromAdmin: `Kai at oceanheart <kai@oceanheart.ai>`,
     // Email shown to customer if they need support. Leave empty if not needed => if empty, set up Crisp above, otherwise you won't be able to offer customer support."
-    supportEmail: "marc.louvion@gmail.com",
+    supportEmail: "kai@oceanheart.ai",
   },
   colors: {
     // REQUIRED — The DaisyUI theme to use (added to the main layout.js). Leave blank for default (light & dark mode). If you use any theme other than light/dark, you need to add it in config.tailwind.js in daisyui.themes.
@@ -116,7 +115,7 @@ const config = {
   },
   auth: {
     // REQUIRED — the path to log in users. It's use to protect private routes (like /dashboard). It's used in apiClient (/libs/api.js) upon 401 errors from our API
-    loginUrl: "/api/auth/signin",
+    loginUrl: "/signin",
     // REQUIRED — the path you want to redirect users to after a successful login (i.e. /dashboard, /private). This is normally a private page for users to manage their accounts. It's used in apiClient (/libs/api.js) upon 401 errors from our API & in ButtonSignin.js
     callbackUrl: "/dashboard",
   },

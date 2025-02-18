@@ -1,46 +1,54 @@
 import Image from "next/image";
+import { ReactNode } from "react";
+import { FaRegFaceGrin } from "react-icons/fa6";
+import { FaRegFaceGrinBeam } from "react-icons/fa6";
+import { FaRegFaceGrinHearts } from "react-icons/fa6";
+import { FaRegFaceGrinStars } from "react-icons/fa6";
+import { FaRegFaceGrinWide } from "react-icons/fa6";
+import { FaRegFaceSmile } from "react-icons/fa6";
+import { FaRegFaceGrinSquintTears } from "react-icons/fa6";
 
 const avatars: {
-  alt: string;
-  src: string;
+  icon: ReactNode;
 }[] = [
-  {
-    alt: "User",
-    // Ideally, load from a statically generated image for better SEO performance (import userImage from "@/public/userImage.png")
-    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3276&q=80",
-  },
-  {
-    alt: "User",
-    src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-  },
-  {
-    alt: "User",
-    src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-  },
-  {
-    alt: "User",
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-  },
-  {
-    alt: "User",
-    src: "https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3376&q=80",
-  },
-];
+    {
+      icon: <FaRegFaceGrin />
+    },
+    {
+      icon: <FaRegFaceGrinBeam />
+    },
+    {
+      icon: <FaRegFaceGrinHearts />
+    },
+    {
+      icon: <FaRegFaceGrinStars />
+    },
+    {
+      icon: <FaRegFaceGrinWide />
+    },
+    {
+      icon: <FaRegFaceSmile />
+    },
+    {
+      icon: <FaRegFaceGrinSquintTears />
+    },
+  ];
+
+const testimonials = new Array(12).fill(true);
+const getRandomAvatar = () => {
+  return avatars[Math.floor(Math.random() * avatars.length)];
+};
 
 const TestimonialsAvatars = ({ priority }: { priority?: boolean }) => {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-3">
-      {/* AVATARS */}
-      <div className={`-space-x-5 avatar-group justy-start`}>
-        {avatars.map((image, i) => (
-          <div className="avatar w-12 h-12" key={i}>
-            <Image
-              src={image.src}
-              alt={image.alt}
-              priority={priority}
-              width={50}
-              height={50}
-            />
+      {/* TESTIMONIALS */}
+      <div className={`flex justify-start flex-wrap max-w-32`}>
+        {testimonials.map((_, i) => (
+          <div className="w-5 h-5 hover:scale-110 hover:text-secondary transition-all duration-300" key={i}>
+            <a href="https://uk.trustpilot.com/review/richardhallett.net" target="_blank" rel="noopener noreferrer">
+              {getRandomAvatar().icon}
+            </a>
           </div>
         ))}
       </div>
@@ -66,8 +74,18 @@ const TestimonialsAvatars = ({ priority }: { priority?: boolean }) => {
         </div>
 
         <div className="text-base text-base-content/80">
-          <span className="font-semibold text-base-content">32</span> makers
-          ship faster
+          <span className="font-semibold text-base-content">
+            {testimonials.length}
+          </span>{" "}
+          happy people{" "}
+          <a
+            href="https://uk.trustpilot.com/review/richardhallett.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary-content underline"
+          >
+            have used oceanheart.ai
+          </a>
         </div>
       </div>
     </div>

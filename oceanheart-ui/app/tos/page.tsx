@@ -57,39 +57,39 @@ const TOS = () => {
           className="leading-relaxed whitespace-pre-wrap"
           style={{ fontFamily: "sans-serif" }}
         >
-          {`Last Updated: September 26, 2023
+          {`
+Effective Date: February 18, 2025
 
-Welcome to ShipFast!
+1. Introduction
 
-These Terms of Service ("Terms") govern your use of the ShipFast website at https://shipfa.st ("Website") and the services provided by ShipFast. By using our Website and services, you agree to these Terms.
+oceanheart.ai ("we," "our," or "us") values your privacy. These Terms of Service explain how we collect, use, and protect your information when you visit our website (https://www.oceanheart.ai) and use our services.
 
-1. Description of ShipFast
+2. Information We Collect
 
-ShipFast is a platform that offers a JavaScript code boilerplate to assist entrepreneurs in launching their startups more efficiently.
+Personal Data: We collect your name, email, and payment information for order processing. Within the app, users are required to store client details under pseudonyms and remove any personally identifiable data (PID), including dates of birth and addresses.
 
-2. Ownership and Usage Rights
+It is the responsibility of each user to ensure they gain appropriate levels of consent from their clients before storing their data. Clients must understand that their any and all of their data will be stored on our servers and regularly used for training our AI models, or sent to third parties for analysis, extraction and transformation.
 
-When you purchase a package from ShipFast, you gain the right to download and use the code provided for creating applications. You own the code you create but do not have the right to resell it. We offer a full refund within 7 days of purchase, as specified in our refund policy.
+Non-Personal Data: We use cookies to improve website functionality and user experience.
 
-3. User Data and Privacy
+3. How We Use Your Data
 
-We collect and store user data, including name, email, and payment information, as necessary to provide our services. For details on how we handle your data, please refer to our Privacy Policy at https://shipfa.st/privacy-policy.
+We collect and use your data solely for order processing and to provide our services effectively.
 
-4. Non-Personal Data Collection
+4. Data Sharing
 
-We use web cookies to collect non-personal data for the purpose of improving our services and user experience.
+We do not share your personal data with any third parties.
 
-5. Governing Law
+5. Updates to Terms of Service
 
-These Terms are governed by the laws of France.
+We may update these Terms of Service from time to time. Users will be notified of any changes via email.
 
-6. Updates to the Terms
+6. Contact Us
 
-We may update these Terms from time to time. Users will be notified of any changes via email.
+If you have any questions about these Terms of Service, please contact us at kai@oceanheart.ai.
 
-For any questions or concerns regarding these Terms of Service, please contact us at marc@shipfa.st.
-
-Thank you for using ShipFast!`}
+By using our services, you agree to the terms of these Terms of Service.
+`}
         </pre>
       </div>
     </main>

@@ -5,9 +5,9 @@ import config from "@/config";
 import { getSEOTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
-  title: `${config.appName} Blog`,
+  title: `${config.appName} Blog | Stripe Chargeback Protection`,
   description:
-    "Learn how to ship your startup in days, not weeks",
+    "Learn how to prevent chargebacks, how to accept payments online, and keep your Stripe account in good standing",
   canonicalUrlRelative: "/blog",
 });
 
@@ -25,8 +25,7 @@ export default async function Blog() {
           The {config.appName} Blog
         </h1>
         <p className="text-lg opacity-80 leading-relaxed">
-          Learn how to ship your startup in days, not weeks. And get the latest
-          updates about the boilerplate
+          Here you can find <span className="font-bold text-primary-content">feature releases</span>, <span className="font-bold text-accent-content">roadmap updates</span>, <span className="font-bold text-primary-content">community survey research</span>, the <span className="font-bold text-success">ups</span> and <span className="font-bold text-error">downs</span> of building a startup, and a <span className="font-bold text-info-content">magical breadcrumb trail</span> of the latest developments at the intersection of AI and therapy.
         </p>
       </section>
 

@@ -23,7 +23,7 @@ const features = [
     svg: <FaBrain />,
     type: "image",
     format: "webp",
-    path: "/keyboard.webp"
+    path: "/images/keyboard.webp"
   },
   {
     title: "Therapy Blueprint Cloud Service",
@@ -32,7 +32,7 @@ const features = [
     svg: <FaCloud />,
     type: "image",
     format: "avif",
-    path: "/noid.avif"
+    path: "/images/noid.avif"
   },
   {
     title: "Session Documentation",
@@ -41,7 +41,7 @@ const features = [
     svg: <FaFile />,
     type: "image",
     format: "jpg",
-    path: "/handshake.jpg"
+    path: "/images/handshake.jpg"
   },
   {
     title: "Secure Client Management",
@@ -50,7 +50,7 @@ const features = [
     svg: <FaLock />,
     type: "image",
     format: "webp",
-    path: "/phonelock.webp"
+    path: "/images/phonelock.webp"
   },
   {
     title: "Progress Visualization",
@@ -59,7 +59,7 @@ const features = [
     svg: <FaChartLine />,
     type: "image",
     format: "avif",
-    path: "/mind-cloud.avif"
+    path: "/images/mind-cloud.avif"
   },
   {
     title: "Resource Library",
@@ -68,7 +68,7 @@ const features = [
     svg: <FaBook />,
     type: "image",
     format: "jpg",
-    path: "/universe.jpg"
+    path: "/images/universe.jpg"
   },
 
 

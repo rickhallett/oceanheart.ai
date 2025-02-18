@@ -1,12 +1,11 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import type { JSX } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import ButtonSignin from "./ButtonSignin";
-import logo from "../public/0.png";
+import logo from "@/app/icon.png";
 import config from "@/config";
 
 const links: {
@@ -18,12 +17,12 @@ const links: {
       label: "Pricing",
     },
     {
-      href: "/#testimonials",
-      label: "Reviews",
-    },
-    {
       href: "/#faq",
       label: "FAQ",
+    },
+    {
+      href: "/blog",
+      label: "Blog",
     },
   ];
 
