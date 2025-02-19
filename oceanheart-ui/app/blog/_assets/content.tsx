@@ -3,6 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import kaiImg from "@/app/blog/_assets/images/authors/blog_avatar.jpeg";
 import introducingOceanheartAiImg from "@/public/blog/introducing-oceanheart-ai/header.png";
 import composableAgentSystemsImg from "@/public/blog/composable-agent-systems-1/header.png";
+import iterativeVerificationImg from "@/public/blog/iterative-verification/header.jpeg";
 // ==================================================================================================================================================================
 // BLOG CATEGORIES 🏷️
 // ==================================================================================================================================================================
@@ -349,6 +350,13 @@ export const articles: articleType[] = [
     // The article content
     content: (
       <>
+        <Image
+          src={composableAgentSystemsImg}
+          alt="composable agent systems cover image"
+          width={700}
+          height={500}
+          priority={true}
+        />
         <h2 className={styles.h2}>Why Simple, Composable Designs Work</h2>
         <p className={styles.p}>
           Over time, I’ve noticed that the most successful agent systems often emerge from simple, composable designs rather than sprawling frameworks. Early on, I made the mistake of trying to stitch together complex chains of tools and prompts, hoping that more moving parts would give me more robust results. In practice, it just made my code harder to maintain and debug.
@@ -361,6 +369,53 @@ export const articles: articleType[] = [
         </p>
       </>
     ),
+  },
+  {
+    // The unique slug to use in the URL
+    slug: "iterative-verification",
+    // The title to display in the article page (h1)
+    title: "Iterative Verification in Agent Loops",
+    // The description of the article
+    description:
+      "Reflections on adding a quick test step before final outputs to ensure accuracy and save time.",
+    // Example category usage (replace with valid references if needed)
+    categories: [
+      categories.find((category) => category.slug === categorySlugs.learning),
+    ],
+    // Example author usage (replace with valid references if needed)
+    author: authors.find((author) => author.slug === authorSlugs.kai),
+    // Publish date
+    publishedAt: "2025-02-19",
+    // Image metadata
+    image: {
+      // Replace with a valid import or reference to your own image
+      src: iterativeVerificationImg,
+      urlRelative: "/blog/iterative-verification/header.jpg",
+      alt: "iterative verification image",
+    },
+    // The article content
+    content: (
+      <>
+        <Image
+          src={iterativeVerificationImg}
+          alt="iterative verification image"
+          width={700}
+          height={500}
+          priority={true}
+        />
+        <h2 className={styles.h2}>Adding a Quick Test Step</h2>
+        <p className={styles.p}>
+          I’ve learned that giving an agent a way to test partial results before finalizing them is a game-changer. At first, I would just run a single pass—hand the model some instructions, watch it produce an outcome, and hope for the best. But inevitably, small errors crept in: malformed queries, incomplete code blocks, or confusing logic.
+        </p>
+        <p className={styles.p}>
+          The simple fix was to add a lightweight “trial run” step in the middle of the loop. For instance, if the agent needs to craft a database query, it first attempts a test version, collects feedback about errors or table schemas, and only then produces the final query. In other words, it actively checks its own work.
+        </p>
+        <p className={styles.p}>
+          What I found most effective is to keep the verification step as short and clear as possible. If it returns too much noise or tries to do half a dozen different checks, the original problem just gets buried. But with a focused test, the agent can refine its approach and avoid repeated dead ends. This little tweak not only tightened reliability but also cut down on wasted compute and time.
+        </p>
+      </>
+    ),
   }
+
 
 ];
