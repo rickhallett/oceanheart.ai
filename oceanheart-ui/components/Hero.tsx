@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
+import ButtonSignin from "@/components/ButtonSignin";
 import config from "@/config";
 
 const Hero = () => {
@@ -21,9 +22,11 @@ const Hero = () => {
         <p className="text-lg opacity-80 leading-relaxed">
           oceanheart.ai helps therapists do more of what they love most: <span className="italic text-blue-400">helping people</span>
         </p>
-        <button className="btn btn-primary btn-wide">
-          Get <span className="lowercase">{config.appName}</span>
-        </button>
+        <ButtonSignin
+          extraStyle="btn btn-primary btn-wide"
+          text={`Get ${config.appName}`}
+        />
+
 
         <TestimonialsAvatars />
       </div>
