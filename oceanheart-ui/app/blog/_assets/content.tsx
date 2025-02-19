@@ -4,6 +4,7 @@ import kaiImg from "@/app/blog/_assets/images/authors/blog_avatar.jpeg";
 import introducingOceanheartAiImg from "@/public/blog/introducing-oceanheart-ai/header.png";
 import composableAgentSystemsImg from "@/public/blog/composable-agent-systems-1/header.png";
 import iterativeVerificationImg from "@/public/blog/iterative-verification/header.jpeg";
+import singleFileAgentsImg from "@/public/blog/single-file-agents/header.png";
 // ==================================================================================================================================================================
 // BLOG CATEGORIES 🏷️
 // ==================================================================================================================================================================
@@ -415,7 +416,74 @@ export const articles: articleType[] = [
         </p>
       </>
     ),
+  },
+  {
+    // The unique slug to use in the URL
+    slug: "single-file-agents",
+    // The title to display in the article page (h1)
+    title: "Single-File Agent Architecture",
+    // The description of the article
+    description:
+      "How embedding an agent’s logic, prompts, and dependencies into a single script can streamline development.",
+    // Example category usage (replace with valid references if needed)
+    categories: [
+      categories.find((category) => category.slug === categorySlugs.feature),
+    ],
+    // Example author usage (replace with valid references if needed)
+    author: authors.find((author) => author.slug === authorSlugs.kai),
+    // Publish date
+    publishedAt: "2025-02-19",
+    // Image metadata
+    image: {
+      // Replace with a valid import or reference to your own image
+      src: singleFileAgentsImg,
+      urlRelative: "/blog/single-file-agents/header.jpg",
+      alt: "single file agents image",
+    },
+    // The article content
+    content: (
+      <>
+        <Image
+          src={singleFileAgentsImg}
+          alt="single file agents image"
+          width={700}
+          height={500}
+          priority={true}
+        />
+        <h2 className={styles.h2}>Embracing the Single-File Approach</h2>
+        <p className={styles.p}>
+          Over time, I discovered that packing an entire agent—its logic, prompt handling, and dependencies—into a single script can be surprisingly powerful. Having everything in one place makes it easier to see exactly what’s happening at each step. It also means I can drop the file into a fresh environment, run it, and get immediate results without fussing over separate config files or environment mismatches.
+        </p>
+        <p className={styles.p}>
+          To pull this off, I rely on an approach that <a href="https://docs.astral.sh/uv/guides/scripts/#declaring-script-dependencies" className="link link-primary">embeds dependencies right in the file</a> and organizes each tool through a simple interface. The tools themselves are just small functions or classes with clear parameters. Each loop of the agent is straightforward too: parse arguments, pick a tool, return the result, and repeat. It’s a no-frills way to stay transparent about what’s being called and why.
+        </p>
+        <p className={styles.p}>
+          Going single-file helped me move faster because I could quickly clone or tweak agents for different tasks: swap out one database library for another, or replace a single prompt step without tearing apart a big codebase. It feels modular despite being self-contained. The key is to keep tools minimal, keep prompts well-scoped, and treat your main loop like a conversation with bite-sized steps. The end result is a system that’s easy to grasp, fast to iterate on, and surprisingly robust.
+        </p>
+        <p className={styles.p}>
+          As Big Tech continues to scale up their AI tooling, every developer focusing on agentic systems faces the threat of their custom code being crushed overnight. By keeping systems modular and - more crucially - composable, we can reduce our exposure to technical risk. The uber models will provide an ever more capable orchestration layer that we can use to play our single file systems like a well-tuned orchestra.
+        </p>
+        <p className={styles.p}>
+          Credit to <a href="https://www.anthropic.com/research/building-effective-agents" className="link link-primary">Anthropic's "Building Effective Agents"</a> for one of the clearest sources of guidance on this devilishly difficult topic.
+        </p>
+        <p className={styles.p}>
+          Many of these reflections are built upon the contributions of <a href="https://www.youtube.com/@indydevdan" className="link link-primary">IndyDevDan</a>; a source of true signal (and sanity) in a world of hype, FUD and noise. One of the first movers in this space, he has been building with agents for years and has a wealth of knowledge to share. Rather than jumping on every new tool or framework, Dan is focused on the fundamentals of building effective agents and distilling them into a set of principles that is language, toolchain and framework agnostic. I would <span className="font-bold">strongly</span> recommend you check out his course <a
+            href="https://agenticengineer.com/principled-ai-coding?ref=oceanheart.ai"
+            className="link link-primary font-bold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Principled AI Coding
+          </a>.
+
+        </p>
+        <p className={styles.p}>
+          It's a game changer.
+        </p>
+      </>
+    ),
   }
+
 
 
 ];
