@@ -1,0 +1,12 @@
+[project]
+name = "gemini-structured-extraction"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-genai>=1.2.0",
+    "pillow>=11.1.0",
+    "python-dotenv>=1.0.1",
+    "yt-dlp>=2025.2.19",
+]

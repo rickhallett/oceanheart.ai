@@ -2,7 +2,7 @@ import type { JSX } from "react";
 import Image, { StaticImageData } from "next/image";
 import kaiImg from "@/app/blog/_assets/images/authors/blog_avatar.jpeg";
 import introducingOceanheartAiImg from "@/public/blog/introducing-oceanheart-ai/header.png";
-
+import composableAgentSystemsImg from "@/public/blog/composable-agent-systems-1/header.png";
 // ==================================================================================================================================================================
 // BLOG CATEGORIES 🏷️
 // ==================================================================================================================================================================
@@ -98,6 +98,14 @@ export const categories: categoryType[] = [
     description:
       "Psychology, counseling, and other relevant content.",
     descriptionShort: "Psychology, counseling, and other relevant content.",
+  },
+  {
+    slug: categorySlugs.learning,
+    title: "Learning",
+    titleShort: "Learning",
+    description:
+      "Reflections on my learning journey with AI, psychotherapy and software engineering.",
+    descriptionShort: "Reflections on my learning journey with AI, psychotherapy and software engineering.",
   },
 ];
 
@@ -315,4 +323,44 @@ export const articles: articleType[] = [
       </>
     ),
   },
+  {
+    // The unique slug to use in the URL
+    slug: "composable-agent-systems-1",
+    // The title to display in the article page (h1)
+    title: "Composable Agent Systems: Lessons Learned",
+    // The description of the article
+    description:
+      "Reflections on keeping overhead low and agility high when designing agent systems.",
+    // Example category usage (replace with valid references if needed)
+    categories: [
+      categories.find((category) => category.slug === categorySlugs.learning),
+    ],
+    // Example author usage (replace with valid references if needed)
+    author: authors.find((author) => author.slug === authorSlugs.kai),
+    // Publish date
+    publishedAt: "2025-02-19",
+    // Image metadata
+    image: {
+      // Replace with a valid import or reference to your own image
+      src: composableAgentSystemsImg,
+      urlRelative: "/blog/composable-agent-systems-1/header.jpg",
+      alt: "composable agent systems cover image",
+    },
+    // The article content
+    content: (
+      <>
+        <h2 className={styles.h2}>Why Simple, Composable Designs Work</h2>
+        <p className={styles.p}>
+          Over time, I’ve noticed that the most successful agent systems often emerge from simple, composable designs rather than sprawling frameworks. Early on, I made the mistake of trying to stitch together complex chains of tools and prompts, hoping that more moving parts would give me more robust results. In practice, it just made my code harder to maintain and debug.
+        </p>
+        <p className={styles.p}>
+          A lean, single-file approach taught me to focus on clear tool definitions, straightforward loops, and minimal overhead. Each agent can stay tightly scoped to one responsibility: for instance, handling a database query or executing a code transformation. By composing small, purpose-driven scripts, I can quickly pivot if a certain idea doesn’t pan out. That flexibility proved invaluable when deadlines were tight or when new project requirements popped up unexpectedly.
+        </p>
+        <p className={styles.p}>
+          The essence of this approach is to provide just enough capabilities—like retrieval, memory, or step-by-step prompts—to achieve the task at hand. Without the baggage of excess tools or overly fancy frameworks, it’s easier to see where an agent adds value and where a single prompt might suffice. In short, a direct and simple structure provides clarity, reduces hidden complexity, and keeps the path from input to output transparent at every step.
+        </p>
+      </>
+    ),
+  }
+
 ];
