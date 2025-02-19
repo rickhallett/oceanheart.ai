@@ -1,0 +1,6 @@
+[submodule "single-file-agents/anthropic-cookbook"]
+	path = single-file-agents/anthropic-cookbook
+	url = git@github.com:anthropics/anthropic-cookbook.git
+[submodule "single-file-agents/gemini-structured-extraction"]
+	path = single-file-agents/gemini-structured-extraction
+	url = git@github.com:hackingthemarkets/gemini-multimodal-structured-extraction.git
