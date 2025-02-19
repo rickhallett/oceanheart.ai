@@ -5,6 +5,7 @@ import introducingOceanheartAiImg from "@/public/blog/introducing-oceanheart-ai/
 import composableAgentSystemsImg from "@/public/blog/composable-agent-systems-1/header.png";
 import iterativeVerificationImg from "@/public/blog/iterative-verification/header.jpeg";
 import singleFileAgentsImg from "@/public/blog/single-file-agents/header.png";
+import scalableAgentSystemsImg from "@/public/blog/scaling-agent-compute/header.jpg";
 // ==================================================================================================================================================================
 // BLOG CATEGORIES 🏷️
 // ==================================================================================================================================================================
@@ -482,7 +483,67 @@ export const articles: articleType[] = [
         </p>
       </>
     ),
+  },
+  {
+    // The unique slug to use in the URL
+    slug: "scaling-agent-compute",
+    // The title to display in the article page (h1)
+    title: "Scaling Agent Compute Through Multi-Step Reasoning",
+    // The description of the article
+    description:
+      "Reflections on how multiple loops of context gathering let agents refine their output while controlling cost.",
+    // Example category usage (replace with valid references if needed)
+    categories: [
+      categories.find((category) => category.slug === categorySlugs.feature),
+    ],
+    // Example author usage (replace with valid references if needed)
+    author: authors.find((author) => author.slug === authorSlugs.kai),
+    // Publish date
+    publishedAt: "2025-02-19",
+    // Image metadata
+    image: {
+      // Replace with a valid import or reference to your own image
+      src: scalableAgentSystemsImg,
+      urlRelative: "/blog/scaling-agent-compute/header.jpg",
+      alt: "scaling agent compute image",
+    },
+    // The article content
+    content: (
+      <>
+        <Image
+          src={scalableAgentSystemsImg}
+          alt="scaling agent compute image"
+          width={700}
+          height={500}
+          priority={true}
+        />
+        <h2 className={styles.h2}>Reasoning Over Multiple Steps</h2>
+        <p className={styles.p}>
+          When I realized that chaining multiple steps of reasoning together could unlock more advanced outcomes, it changed how I thought about compute usage. Instead of a single-pass approach, I started letting the agent run through multiple loops—each one gathering new information, refining context, and deciding on the next tool to call. This multi-step pattern didn’t just give better results; it let me dial in exactly how much “thinking time” to invest.
+        </p>
+        <p className={styles.p}>
+          By capping the number of loops, I could keep costs in check, while still allowing for deeper logic. If a problem was simple, I’d limit iterations to keep it quick. If it was complex, I’d give the agent more room to explore. On top of that, I can easily switch out the LLM model to use; whilst it is tempting to hit o1 for everything, you take a financial and performance hit. Gemini Flash 2, or it's equivalent cousins from the other mega corps is a fraction of the cost and yet still very capable for well defined tasks. This fine-grained control became invaluable, since I could balance performance against the budget for each task.
+        </p>
+        <p className={styles.p}>
+          An added benefit was the clarity: with each step explicitly logged or stored, debugging felt more like watching a conversation unfold than sifting through an opaque black box. In the end, I found that scaling compute gradually, tied to clear intermediate steps, gave me a more intelligent system without blowing up my runtime costs. It’s a natural way to refine solutions: each extra turn in the loop can mean one more shot at getting things right.
+        </p>
+        <p className={styles.p}>
+          Credit to <a href="https://www.youtube.com/@indydevdan" className="link link-primary">IndyDevDan</a> for laying out clear groundwork for this approach; see his Github <a href="https://github.com/disler/single-file-agents" className="link link-primary">here</a>.
+        </p>
+        <p className={styles.p}>
+          Many of these reflections are built upon the contributions of <a href="https://www.youtube.com/@indydevdan" className="link link-primary">IndyDevDan</a>; a source of true signal (and sanity) in a world of hype, FUD and noise. One of the first movers in this space, he has been building with agents for years and has a wealth of knowledge to share. Rather than jumping on every new tool or framework, Dan is focused on the fundamentals of building effective agents and distilling them into a set of principles that is language, toolchain and framework agnostic. If you are serious about building agents and future proofing your work, I would <span className="font-bold">strongly</span> recommend you check out his course <a
+            href="https://agenticengineer.com/principled-ai-coding?ref=oceanheart.ai"
+            className="link link-primary font-bold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Principled AI Coding
+          </a>.
+        </p>
+      </>
+    ),
   }
+
 
 
 
