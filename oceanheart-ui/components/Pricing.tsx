@@ -122,6 +122,25 @@ const Pricing = () => {
           ))}
         </div>
       </div>
+      {/* Mailing List CTA */}
+      <section className="bg-neutral text-neutral-content py-20 px-8 mt-12">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="font-bold text-3xl md:text-4xl mb-6">Join Our Mailing List</h2>
+          <p className="mb-8">
+            Stay updated with our latest news, special offers, and announcements.
+          </p>
+          <form className="flex justify-center">
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="input input-bordered w-full max-w-md"
+            />
+            <button type="submit" className="btn btn-primary ml-2">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
     </section>
   );
 };
