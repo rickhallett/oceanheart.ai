@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function MailingListForm() {
   const [email, setEmail] = useState("");
   const [notification, setNotification] = useState("");
+  const [fadeOut, setFadeOut] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,12 +22,27 @@ export default function MailingListForm() {
       }
 
       setNotification("Subscription successful!");
+      setFadeOut(false);
       setEmail("");
     } catch (error) {
       console.error(error);
       setNotification("Subscription failed. Please try again.");
     }
   };
+
+  useEffect(() => {
+    if (notification === "Subscription successful!") {
+      const timer1 = setTimeout(() => setFadeOut(true), 5000);
+      const timer2 = setTimeout(() => {
+        setNotification("");
+        setFadeOut(false);
+      }, 6000);
+      return () => {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+      };
+    }
+  }, [notification]);
 
   return (
     <section className="bg-neutral text-neutral-content py-20 px-8 mt-12">
@@ -49,7 +65,15 @@ export default function MailingListForm() {
               Subscribe
             </button>
           </div>
-          {notification && <p className="mt-4 text-sm">{notification}</p>}
+          {notification && (
+            <p
+              className={`mt-4 text-sm transition-opacity duration-1000 ${
+                fadeOut ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              {notification}
+            </p>
+          )}
         </form>
       </div>
     </section>
