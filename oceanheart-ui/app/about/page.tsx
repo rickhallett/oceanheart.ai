@@ -29,7 +29,7 @@ export default function AboutPage() {
           <article>
             <h2 className="font-bold text-2xl mb-4">My Journey</h2>
             <p className="text-base">
-              I'm a software engineer with a passion for building tools that help people. I've always been interested in the intersection of technology and psychology, and I'm excited to see how AI can transform the way we approach mental health.
+              I'm a psychologist and software engineer with a passion for building tools that help people. I've always been interested in the intersection of technology and psychology, and I'm excited to see how AI can transform the way we approach mental health.
             </p>
             <br />
             <p className="text-base">
@@ -39,7 +39,7 @@ export default function AboutPage() {
           <article>
             <h2 className="font-bold text-2xl mb-4">Our Vision</h2>
             <p className="text-base">
-              I've worked in the mental health space for a few years now, and I've seen firsthand the challenges that therapists face.
+              I've worked in the mental health space for 15 years, so I've seen firsthand the challenges that therapists face.
             </p>
             <br />
             <p className="text-base">
