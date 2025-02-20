@@ -13,11 +13,11 @@ export async function POST(req: NextRequest) {
   try {
     const supabase = createClient();
 
-    // Check if the email already exists
+    // TODO: leads table needs service role policy to be set up for read access
     const { data: existingLead, error: selectError } = await supabase
       .from("leads")
       .select("email")
-      .eq("email", body.email)
+      .ilike("email", body.email)
       .maybeSingle();
 
     if (selectError) {
