@@ -11,13 +11,25 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    // Here you can add your own logic
-    // For instance, sending a welcome email (use the the sendEmail helper function from /libs/resend)
-    // For instance, saving the lead in the database (uncomment the code below)
-
     const supabase = createClient();
-    await supabase.from("leads").insert({ email: body.email });
 
+    // Check if the email already exists
+    const { data: existingLead, error: selectError } = await supabase
+      .from("leads")
+      .select("email")
+      .eq("email", body.email)
+      .maybeSingle();
+
+    if (selectError) {
+      return NextResponse.json({ error: selectError.message }, { status: 500 });
+    }
+
+    if (existingLead) {
+      return NextResponse.json({ error: "Email already subscribed" }, { status: 400 });
+    }
+
+    // Insert the new lead if not already subscribed
+    await supabase.from("leads").insert({ email: body.email });
     return NextResponse.json({});
   } catch (e) {
     console.error(e);

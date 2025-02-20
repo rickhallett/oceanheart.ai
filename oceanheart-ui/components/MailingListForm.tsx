@@ -26,7 +26,11 @@ export default function MailingListForm() {
       setEmail("");
     } catch (error) {
       console.error(error);
-      setNotification("Subscription failed. Please try again.");
+      if (error instanceof Error && error.message.includes("already subscribed")) {
+        setNotification("Email already subscribed");
+      } else {
+        setNotification("Subscription failed. Please try again.");
+      }
     }
   };
 
