@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -6,6 +5,7 @@ import Link from "next/link";
 import { User } from "@supabase/supabase-js";
 import { createClient } from "@/libs/supabase/client";
 import config from "@/config";
+import Image from "next/image";
 
 // A simple button to sign in with our providers (Google & Magic Links).
 // It automatically redirects user to callbackUrl (config.auth.callbackUrl) after login, which is normally a private page for users to manage their accounts.
@@ -39,7 +39,7 @@ const ButtonSignin = ({
         className={`btn ${extraStyle ? extraStyle : ""}`}
       >
         {user?.user_metadata?.avatar_url ? (
-          <img
+          <Image
             src={user?.user_metadata?.avatar_url}
             alt={user?.user_metadata?.name || "Account"}
             className="w-6 h-6 rounded-full shrink-0"

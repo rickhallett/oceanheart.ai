@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createClient } from "@/libs/supabase/client";
 import { Provider } from "@supabase/supabase-js";
 import toast from "react-hot-toast";
@@ -34,7 +34,7 @@ export default function Login() {
         await supabase.auth.signInWithOAuth({
           provider,
           options: {
-            redirectTo: redirectURL,
+            redirectTo: 'http://localhost:3000',
           },
         });
       } else if (type === "magic_link") {
