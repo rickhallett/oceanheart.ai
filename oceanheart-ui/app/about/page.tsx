@@ -5,12 +5,12 @@ export default function AboutPage() {
   return (
     <main className="bg-base-100">
       {/* Intro Section */}
-      <section className="py-20 px-8 max-w-7xl mx-auto text-center">
+      <section className="pt-20 px-8 max-w-7xl mx-auto text-center">
         <h1 className="font-extrabold text-4xl md:text-6xl tracking-tight mb-6">
           About Me
         </h1>
-        <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto mb-12">
-          Welcome! I'm [Your Name], the founder behind {config.appName}. I am passionate about leveraging technology to empower therapists and transform care.
+        <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto mb-0 md:mb-12">
+          Welcome! I'm <a className="underline text-primary" href="https://www.linkedin.com/in/richardhallett86/" target="_blank" rel="noopener noreferrer">Richard (Kai)</a>, the founder behind {config.appName}. I am passionate about leveraging technology to empower therapists and transform care.
         </p>
       </section>
 
@@ -18,10 +18,10 @@ export default function AboutPage() {
       <section className="flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto px-8 py-16">
         <div className="md:w-1/2">
           <Image
-            src="/images/profile.jpg" // <-- replace with your profile photo path
-            alt="Profile picture of [Your Name]"
-            width={500}
-            height={500}
+            src="/images/about_me_profile_2.jpeg"
+            alt="Profile picture of Richard (Kai)"
+            width={400}
+            height={400}
             className="rounded-full mx-auto"
           />
         </div>
@@ -29,13 +29,31 @@ export default function AboutPage() {
           <article>
             <h2 className="font-bold text-2xl mb-4">My Journey</h2>
             <p className="text-base">
-              [Edit this text: Describe your background, what motivated you to start your journey, and key milestones along the way.]
+              I'm a software engineer with a passion for building tools that help people. I've always been interested in the intersection of technology and psychology, and I'm excited to see how AI can transform the way we approach mental health.
+            </p>
+            <br />
+            <p className="text-base">
+              Find out more about me <a className="underline text-primary" href="https://www.oceanheart.online/about" target="_blank" rel="noopener noreferrer">here</a>.
             </p>
           </article>
           <article>
             <h2 className="font-bold text-2xl mb-4">Our Vision</h2>
             <p className="text-base">
-              [Edit this text: Explain the vision behind {config.appName} – its mission, values, and how it aims to help therapists and their clients.]
+              I've worked in the mental health space for a few years now, and I've seen firsthand the challenges that therapists face.
+            </p>
+            <br />
+            <p className="text-base">
+              I've been thoroughly nerding out on AI tools for a while in my own practice - I am continually amazed by what is possible and I want make it easier for both therapists and their clients to experience the difference.
+            </p>
+          </article>
+          <article>
+            <h2 className="font-bold text-2xl mb-4">Private Consulting</h2>
+            <p className="text-base">
+              I offer private consulting services to therapists and their teams. Want help with AI tools? Good chance I have used it. I've got you covered. Don't waste time reinventing the wheel or figuring things out from the ground up.
+            </p>
+            <br />
+            <p className="text-base">
+              I specialise in Acceptance and Commitment Therapy (ACT); if you are looking for something different to CBT, <a className="underline text-primary" href="https://www.oceanheart.online/pricing" target="_blank" rel="noopener noreferrer">I'm here to help</a>.
             </p>
           </article>
         </div>
