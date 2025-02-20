@@ -6,6 +6,7 @@ import { createClient } from "@/libs/supabase/client";
 import { Provider } from "@supabase/supabase-js";
 import toast from "react-hot-toast";
 import config from "@/config";
+import Script from "next/script";
 
 // This a login/singup page for Supabase Auth.
 // Successfull login redirects to /api/auth/callback where the Code Exchange is processed (see app/api/auth/callback/route.js).
@@ -14,6 +15,29 @@ export default function Login() {
   const [email, setEmail] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
+
+  useEffect(() => {
+    // Load reCAPTCHA script
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    script.defer = true;
+
+    script.onload = () => {
+      setRecaptchaLoaded(true);
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+      const badge = document.querySelector('.grecaptcha-logo');
+      if (badge && badge.parentElement) {
+        badge.parentElement.remove();
+      }
+    };
+  }, []);
 
   const handleSignup = async (
     e: any,
@@ -23,6 +47,33 @@ export default function Login() {
     }
   ) => {
     e?.preventDefault();
+
+    // Wait for recaptcha to be loaded
+    if (!recaptchaLoaded) {
+      toast.error("Please wait for reCAPTCHA to load");
+      return;
+    }
+
+    if (!window.grecaptcha) {
+      throw new Error("reCAPTCHA not loaded");
+    }
+    await new Promise((resolve) => window.grecaptcha.ready(resolve));
+    const recaptchaToken = await window.grecaptcha.execute(
+      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string,
+      { action: "login" }
+    );
+
+    // Verify captcha first
+    const res = await fetch("/api/auth/verify-and-signin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ recaptchaToken }),
+    });
+    const data = await res.json();
+
+    if (data.error) {
+      throw new Error(data.error);
+    }
 
     setIsLoading(true);
 
