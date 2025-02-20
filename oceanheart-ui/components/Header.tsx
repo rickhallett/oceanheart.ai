@@ -24,6 +24,10 @@ const links: {
       href: "/blog",
       label: "Blog",
     },
+    {
+      href: "/about",
+      label: "About",
+    },
   ];
 
 const cta: JSX.Element = <ButtonSignin extraStyle="btn-primary" />;
