@@ -1,0 +1,9 @@
+[project]
+name = "oceanheart-ui"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13.1"
+dependencies = [
+    "aider-install>=0.1.3",
+]
