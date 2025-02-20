@@ -7,7 +7,7 @@ const config = {
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription: "Welcome to Therapy 2.0",
   // REQUIRED (no https://, not trailing slash at the end, just the naked domain)
-  domainName: "www.oceanheart.ai",
+  domainName: "oceanheart.ai",
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (resend.supportEmail) otherwise customer support won't work.
     id: "",
@@ -102,7 +102,8 @@ const config = {
     // REQUIRED — Email 'From' field to be used when sending magic login links
     fromNoReply: `oceanheart <noreply@oceanheart.ai>`,
     // REQUIRED — Email 'From' field to be used when sending other emails, like abandoned carts, updates etc..
-    fromAdmin: `Kai at oceanheart <kai@oceanheart.ai>`,
+    // fromAdmin: `Kai at oceanheart <kai@oceanheart.ai>`,
+    fromAdmin: `updates@oceanheart.ai`,
     // Email shown to customer if they need support. Leave empty if not needed => if empty, set up Crisp above, otherwise you won't be able to offer customer support."
     supportEmail: "kai@oceanheart.ai",
   },
@@ -117,7 +118,7 @@ const config = {
     // REQUIRED — the path to log in users. It's use to protect private routes (like /dashboard). It's used in apiClient (/libs/api.js) upon 401 errors from our API
     loginUrl: "/signin",
     // REQUIRED — the path you want to redirect users to after a successful login (i.e. /dashboard, /private). This is normally a private page for users to manage their accounts. It's used in apiClient (/libs/api.js) upon 401 errors from our API & in ButtonSignin.js
-    callbackUrl: (process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://oceanheart.ai") + "/dashboard",
+    callbackUrl: "/dashboard",
   },
 } as ConfigProps;
 
