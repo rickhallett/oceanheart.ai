@@ -134,6 +134,7 @@ const Pricing = () => {
               type="email"
               placeholder="Your Email"
               className="input input-bordered w-full max-w-md"
+              required
             />
             <button type="submit" className="btn btn-primary ml-2">
               Subscribe
