@@ -3,3 +3,4 @@
 **/*.env*
 # aider
 .aider*
+single-file-agents/examples/gemini-structured-extraction/split_audio.sh

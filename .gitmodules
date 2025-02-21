@@ -4,3 +4,6 @@
 [submodule "single-file-agents/gemini-structured-extraction"]
 	path = single-file-agents/gemini-structured-extraction
 	url = git@github.com:hackingthemarkets/gemini-multimodal-structured-extraction.git
+[submodule "oceanheart-ui"]
+	path = oceanheart-ui
+	url = github.com:rickhallett/oceanheart-ui.git
