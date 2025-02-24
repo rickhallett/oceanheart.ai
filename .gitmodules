@@ -1,12 +1,12 @@
-[submodule "single-file-agents/anthropic-cookbook"]
-	path = single-file-agents/anthropic-cookbook
+[submodule "ai-sandbox/single-file-agents/anthropic-cookbook"]
+	path = ai-sandbox/single-file-agents/anthropic-cookbook
 	url = git@github.com:anthropics/anthropic-cookbook.git
-[submodule "single-file-agents/gemini-structured-extraction"]
-	path = single-file-agents/gemini-structured-extraction
+[submodule "ai-sandbox/single-file-agents/gemini-structured-extraction"]
+	path = ai-sandbox/single-file-agents/gemini-structured-extraction
 	url = git@github.com:hackingthemarkets/gemini-multimodal-structured-extraction.git
 [submodule "oceanheart-ui"]
 	path = oceanheart-ui
 	url = github.com:rickhallett/oceanheart-ui.git
-[submodule "single-file-agents/open-deep-research"]
-	path = single-file-agents/open-deep-research
-	url = git@github.com:nickscamara/open-deep-research.git
+[submodule "ai-sandbox/trend-finder"]
+	path = ai-sandbox/trend-finder
+	url = git@github.com:ericciarla/trendFinder.git
