@@ -7,3 +7,6 @@
 [submodule "oceanheart-ui"]
 	path = oceanheart-ui
 	url = github.com:rickhallett/oceanheart-ui.git
+[submodule "single-file-agents/open-deep-research"]
+	path = single-file-agents/open-deep-research
+	url = git@github.com:nickscamara/open-deep-research.git
