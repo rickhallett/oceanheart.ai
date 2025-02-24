@@ -2,8 +2,8 @@
 
 # Check if a filename is provided
 if [ -z "$1" ]; then
-    echo "Usage: $0 <input_file>"
-    exit 1
+  echo "Usage: $0 <input_file>"
+  exit 1
 fi
 
 # Get input file name
@@ -17,6 +17,6 @@ OUTPUT_DIR="${BASENAME}_split"
 mkdir -p "$OUTPUT_DIR"
 
 # Run ffmpeg to split the file
-ffmpeg -i "$INPUT_FILE" -f segment -segment_time 900 -c copy "$OUTPUT_DIR/out%03d.mp3"
+ffmpeg -i "$INPUT_FILE" -f segment -segment_time 900 -c copy "$OUTPUT_DIR/$BASENAME%03d.mp3"
 
 echo "Splitting complete. Files saved in $OUTPUT_DIR/"

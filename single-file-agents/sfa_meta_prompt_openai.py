@@ -411,7 +411,11 @@ def main():
             messages=[{"role": "user", "content": prompt}],
         )
         # Output the response from the OpenAI model.
-        print(response.choices[0].message.content.strip())
+        # print(response.choices[0].message.content.strip())
+
+        # Allow the response to be piped to a file or other command (3.g. uv run sfa_meta_prompt_openai_v1.py > prompt.txt, or uv run sfa_meta_prompt_openai_v1.py | jq '.choices[0].message.content')
+        sys.stdout.write(response.choices[0].message.content.strip())
+        sys.stdout.flush()
     except Exception as e:
         print(f"Error occurred: {str(e)}")
         sys.exit(1)
