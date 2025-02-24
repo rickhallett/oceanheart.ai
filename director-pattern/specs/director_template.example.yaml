@@ -36,3 +36,8 @@ evaluator_model: o1-mini
 # Evaluator type to use
 # Currently only supports: "default" 
 evaluator: default
+
+# When running in agent mode, the director will parse and pass these parameters to the external agent
+agent_commands:
+  - "python path/to/agent1.py --arg1=foo --arg2=bar"
+  - "python path/to/agent2.py --someparam=xyz"

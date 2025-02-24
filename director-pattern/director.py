@@ -26,6 +26,7 @@ class DirectorConfig(BaseModel):
     context_editable: List[str]
     context_read_only: List[str]
     evaluator: Literal["default"]
+    agent_commands: List[str] = []
 
 
 class Director:
@@ -260,7 +261,20 @@ Return a structured JSON response with the following structure: {{
             else:
                 raise ValueError("Failed to parse the response")
 
+    def run_external_agent(self, command: str) -> str:
+        self.file_log(f"Running external agent: {command}")
+        process = subprocess.run(shlex.split(command), capture_output=True, text=True)
+        output = process.stdout + process.stderr
+        self.file_log(f"Agent output: {output}", print_message=False)
+        return output
+
     def direct(self):
+        if self.config.agent_commands:
+            for agent_cmd in self.config.agent_commands:
+                self.file_log(f"🔧 Running agent command: '{agent_cmd}'")
+                agent_output = self.run_external_agent(agent_cmd)
+                self.file_log(f"🔧 Agent result:\n{agent_output}")
+
         evaluation = EvaluationResult(success=False, feedback=None)
         execution_output = ""
         success = False
