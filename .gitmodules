@@ -10,3 +10,6 @@
 [submodule "ai-sandbox/trend-finder"]
 	path = ai-sandbox/trend-finder
 	url = git@github.com:ericciarla/trendFinder.git
+[submodule "ai-sandbox/open-deep-research"]
+	path = ai-sandbox/open-deep-research
+	url = git@github.com:nickscamara/open-deep-research.git
