@@ -13,3 +13,6 @@
 [submodule "ai-sandbox/open-deep-research"]
 	path = ai-sandbox/open-deep-research
 	url = git@github.com:nickscamara/open-deep-research.git
+[submodule "ai-sandbox/single-file-agents/gitingest"]
+	path = ai-sandbox/single-file-agents/gitingest
+	url = git@github.com:cyclotruc/gitingest.git
