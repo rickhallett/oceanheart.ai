@@ -3,40 +3,20 @@
 PDF Email Sender
 
 This script scans a specified directory for PDF files and emails them to a specified
-email address. It provides console reporting and comprehensive error handling.
+email address using the Resend API. It provides console reporting and comprehensive error handling.
 
 re_a2MtJxLD_GZBWRqQCHthFSRGfQ6V1DktD
-"""
-
-"""
-import os
-import resend
-
-resend.api_key = os.environ["RESEND_API_KEY"]
-
-params: resend.Emails.SendParams = {
-    "from": "Acme <onboarding@resend.dev>",
-    "to": ["delivered@resend.dev"],
-    "subject": "hello world",
-    "html": "<strong>it works!</strong>",
-}
-
-email = resend.Emails.send(params)
-print(email)
 """
 
 import os
 import sys
 import argparse
 import logging
-import smtplib
 import time
-from email import encoders
-from email.mime.base import MIMEBase
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+import base64
+import resend
 from pathlib import Path
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Dict, Any
 
 
 # Configure logging
@@ -49,18 +29,14 @@ logger = logging.getLogger(__name__)
 
 
 class PDFEmailer:
-    """Class to handle finding and emailing PDF files."""
+    """Class to handle finding and emailing PDF files using Resend API."""
 
     def __init__(
         self,
         pdf_dir: str,
         recipient_email: str,
         sender_email: str,
-        smtp_server: str,
-        smtp_port: int = 587,
-        username: Optional[str] = None,
-        password: Optional[str] = None,
-        use_tls: bool = True,
+        api_key: Optional[str] = None,
         subject_prefix: str = "PDF Document: ",
         batch_size: int = 5,
         delay_between_batches: int = 30,
@@ -72,11 +48,7 @@ class PDFEmailer:
             pdf_dir: Directory containing PDF files
             recipient_email: Email address to send PDFs to
             sender_email: Email address to send from
-            smtp_server: SMTP server address
-            smtp_port: SMTP server port (default: 587)
-            username: SMTP username (default: None, uses sender_email if not provided)
-            password: SMTP password (default: None)
-            use_tls: Whether to use TLS (default: True)
+            api_key: Resend API key (default: None, uses RESEND_API_KEY env var if not provided)
             subject_prefix: Prefix for email subject lines (default: "PDF Document: ")
             batch_size: Number of emails to send in a batch before pausing (default: 5)
             delay_between_batches: Seconds to wait between batches (default: 30)
@@ -84,14 +56,14 @@ class PDFEmailer:
         self.pdf_dir = Path(pdf_dir)
         self.recipient_email = recipient_email
         self.sender_email = sender_email
-        self.smtp_server = smtp_server
-        self.smtp_port = smtp_port
-        self.username = username or sender_email
-        self.password = password
-        self.use_tls = use_tls
         self.subject_prefix = subject_prefix
         self.batch_size = batch_size
         self.delay_between_batches = delay_between_batches
+        
+        # Set up Resend API
+        resend.api_key = api_key or os.environ.get("RESEND_API_KEY")
+        if not resend.api_key:
+            raise ValueError("Resend API key is required. Set RESEND_API_KEY environment variable or pass api_key parameter.")
 
         # Validate the PDF directory
         if not self.pdf_dir.exists():
@@ -116,68 +88,59 @@ class PDFEmailer:
 
         return pdf_files
 
-    def create_email_message(self, pdf_path: Path) -> MIMEMultipart:
+    def create_email_params(self, pdf_path: Path) -> Dict[str, Any]:
         """
-        Create an email message with the PDF attached.
+        Create email parameters for Resend API with the PDF attached.
 
         Args:
             pdf_path: Path to the PDF file
 
         Returns:
-            Email message with PDF attached
+            Dictionary of email parameters for Resend API
         """
-        # Create message container
-        message = MIMEMultipart()
-        message["From"] = self.sender_email
-        message["To"] = self.recipient_email
-        message["Subject"] = f"{self.subject_prefix}{pdf_path.name}"
-
-        # Add body text
-        body = f"Please find attached the PDF document: {pdf_path.name}"
-        message.attach(MIMEText(body, "plain"))
-
-        # Attach the PDF
         try:
-            with open(pdf_path, "rb") as attachment:
-                part = MIMEBase("application", "octet-stream")
-                part.set_payload(attachment.read())
+            # Read the PDF file and encode it as base64
+            with open(pdf_path, "rb") as file:
+                pdf_content = file.read()
+                pdf_base64 = base64.b64encode(pdf_content).decode("utf-8")
 
-            # Encode file in ASCII characters to send by email
-            encoders.encode_base64(part)
-
-            # Add header as key/value pair to attachment part
-            part.add_header(
-                "Content-Disposition",
-                f"attachment; filename= {pdf_path.name}",
-            )
-
-            # Attach the attachment to the message
-            message.attach(part)
-            return message
+            # Create email parameters
+            params = {
+                "from": self.sender_email,
+                "to": [self.recipient_email],
+                "subject": f"{self.subject_prefix}{pdf_path.name}",
+                "html": f"<p>Please find attached the PDF document: {pdf_path.name}</p>",
+                "attachments": [
+                    {
+                        "filename": pdf_path.name,
+                        "content": pdf_base64,
+                        "content_type": "application/pdf",
+                    }
+                ],
+            }
+            return params
         except Exception as e:
             logger.error(f"Error creating email for {pdf_path.name}: {str(e)}")
             raise
 
-    def send_email(self, message: MIMEMultipart) -> bool:
+    def send_email(self, params: Dict[str, Any]) -> bool:
         """
-        Send an email message.
+        Send an email using Resend API.
 
         Args:
-            message: Email message to send
+            params: Email parameters for Resend API
 
         Returns:
             True if successful, False otherwise
         """
         try:
-            with smtplib.SMTP(self.smtp_server, self.smtp_port) as server:
-                if self.use_tls:
-                    server.starttls()
-
-                if self.password:
-                    server.login(self.username, self.password)
-
-                server.send_message(message)
+            response = resend.Emails.send(params)
+            if response and "id" in response:
+                logger.debug(f"Email sent successfully with ID: {response['id']}")
                 return True
+            else:
+                logger.error(f"Failed to send email: {response}")
+                return False
         except Exception as e:
             logger.error(f"Error sending email: {str(e)}")
             return False
@@ -203,8 +166,8 @@ class PDFEmailer:
                 logger.info(f"Processing file {i}/{len(pdf_files)}: {pdf_path.name}")
 
                 # Create and send the email
-                message = self.create_email_message(pdf_path)
-                if self.send_email(message):
+                params = self.create_email_params(pdf_path)
+                if self.send_email(params):
                     logger.info(f"Successfully sent email with {pdf_path.name}")
                     success_count += 1
                 else:
@@ -227,7 +190,7 @@ class PDFEmailer:
 
 def parse_arguments():
     """Parse command line arguments."""
-    parser = argparse.ArgumentParser(description="Email PDF files from a directory")
+    parser = argparse.ArgumentParser(description="Email PDF files from a directory using Resend API")
 
     parser.add_argument("pdf_dir", help="Directory containing PDF files")
     parser.add_argument("recipient_email", help="Email address to send PDFs to")
@@ -235,19 +198,8 @@ def parse_arguments():
         "--sender-email", required=True, help="Email address to send from"
     )
     parser.add_argument(
-        "--smtp-server",
-        required=True,
-        default="smtp.resend.com",
-        help="SMTP server address",
+        "--api-key", help="Resend API key (defaults to RESEND_API_KEY environment variable)"
     )
-    parser.add_argument(
-        "--smtp-port", type=int, default=465, help="SMTP server port (default: 465)"
-    )
-    parser.add_argument(
-        "--username", default="resend", help="SMTP username (default: resend)"
-    )
-    parser.add_argument("--password", help="SMTP password")
-    parser.add_argument("--no-tls", action="store_true", help="Disable TLS")
     parser.add_argument(
         "--subject-prefix",
         default="PDF Document: ",
@@ -283,11 +235,7 @@ def main():
             pdf_dir=args.pdf_dir,
             recipient_email=args.recipient_email,
             sender_email=args.sender_email,
-            smtp_server=args.smtp_server,
-            smtp_port=args.smtp_port,
-            username=args.username,
-            password=args.password,
-            use_tls=not args.no_tls,
+            api_key=args.api_key,
             subject_prefix=args.subject_prefix,
             batch_size=args.batch_size,
             delay_between_batches=args.delay,
