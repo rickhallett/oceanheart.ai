@@ -1,0 +1,1530 @@
+<html lang="en" data-theme="dark" class=" euow idc0_350">
+
+<head>
+  <style>
+    body {
+      transition: opacity ease-in 0.2s;
+    }
+
+    body[unresolved] {
+      opacity: 0;
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behavioural Economics Series - Habit Theory: Building Adaptive Loops in an AI-Driven World</title>
+
+  <script>
+    const rootElem = document.querySelector("html[data-theme]");
+
+    const detectSystemTheme = () => {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        rootElem.setAttribute("data-theme", "dark");
+      } else {
+        rootElem.setAttribute("data-theme", "light");
+      }
+    };
+
+    const initTheme = () => {
+      const localStoragePref = localStorage.getItem("data-theme");
+
+      if (localStoragePref) {
+        rootElem.setAttribute("data-theme", localStoragePref);
+      } else {
+        detectSystemTheme();
+      }
+    };
+
+    initTheme();
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", () => {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          rootElem.setAttribute("data-theme", "dark");
+        } else {
+          rootElem.setAttribute("data-theme", "light");
+        }
+      });
+  </script>
+
+
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --font-family-titles: "Sora", sans-serif;
+      --font-family-post-body: 'Rethink Sans', sans-serif;
+      --font-family-extra: 'Rethink Sans', sans-serif;
+      --font-family-meta: 'Rethink Sans', sans-serif;
+
+      --font-weight-titles: 600;
+      --font-weight-post-body: 400;
+      --font-weight-extra: 400;
+      --font-weight-meta: 500;
+      --font-weight-meta-tag: 700;
+      --font-weight-meta-subheading: 700;
+      --font-weight-meta-author: 600;
+      --font-weight-meta-button: 600;
+      --font-weight-meta-pagination: 600;
+
+      --font-size-titles-h0: 94px;
+      --font-size-titles-h1: 62px;
+      --font-size-titles-h2: 48px;
+      --font-size-titles-h3: 38px;
+      --font-size-titles-h4: 30px;
+      --font-size-titles-h5: 24px;
+      --font-size-titles-h6: 20px;
+      --font-size-titles-number-large: 120px;
+      --font-size-titles-number-medium: 70px;
+      --font-size-titles-number-small: 24px;
+
+      --line-height-titles-h0: 112%;
+      --line-height-titles-h1: 124%;
+      --line-height-titles-h2: 124%;
+      --line-height-titles-h3: 124%;
+      --line-height-titles-h4: 124%;
+      --line-height-titles-h5: 140%;
+      --line-height-titles-h6: 140%;
+      --line-height-titles-number: 100%;
+
+      --letter-spacing-titles-h0: -0.03em;
+      --letter-spacing-titles-h1: -0.03em;
+      --letter-spacing-titles-h2: -0.03em;
+      --letter-spacing-titles-h3: -0.03em;
+      --letter-spacing-titles-h4: -0.03em;
+      --letter-spacing-titles-h5: -0.03em;
+      --letter-spacing-titles-h6: -0.03em;
+      --letter-spacing-titles-number: -0.03em;
+
+      --font-size-post-body-xl: 24px;
+      --font-size-post-body-l: 20px;
+      --font-size-post-body-m: 16px;
+      --font-size-post-body-s: 14px;
+      --font-size-post-body-xs: 12px;
+
+      --line-height-post-body: 140%;
+
+      --letter-spacing-post-body: 0;
+
+      --font-size-extra-xl: 24px;
+      --font-size-extra-l: 20px;
+      --font-size-extra-m: 16px;
+      --font-size-extra-s: 14px;
+      --font-size-extra-xs: 12px;
+
+      --line-height-extra: 140%;
+
+      --letter-spacing-extra: 0;
+
+      --font-size-meta-author: 12px;
+      --font-size-meta: 12px;
+      --font-size-meta-tag: 10px;
+      --font-size-meta-subheading: 12px;
+      --font-size-meta-button: 14px;
+      --font-size-meta-pagination: 12px;
+
+      --line-height-meta: 140%;
+
+      --letter-spacing-meta: 0;
+      --letter-spacing-meta-author: 0;
+      --letter-spacing-meta-tag: 0.1em;
+      --letter-spacing-meta-subheading: 0.1em;
+      --letter-spacing-meta-button: 0;
+
+      --text-transfrom-author: none;
+      --text-transform-meta: none;
+      --text-transform-tag: uppercase;
+      --text-transform-subheading: uppercase;
+      --text-transfrom-banner-title: uppercase;
+      --text-transform-button: none;
+      --text-transform-pagination: none;
+
+      --subcribe-form-btn-padding--loading: 10px 46px;
+      --edit-billing-btn-padding--loading: 7.5px 59px;
+    }
+  </style>
+
+
+
+  <link rel="stylesheet" href="https://www.oceanheart.blog/assets/built/main.css?v=2ccc108b8b">
+
+  <link rel="canonical"
+    href="https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+
+  <meta property="og:site_name" content="oceanheart.ai">
+  <meta property="og:type" content="article">
+  <meta property="og:title"
+    content="Behavioural Economics Series - Habit Theory: Building Adaptive Loops in an AI-Driven World">
+  <meta property="og:description"
+    content="For decades, therapy has framed habitual behaviours as triggers, actions, and rewards. Approaching my third decade as a clinician comes with an increasing focus on functional analysis; the key to solutions so often hides not in the behaviour itself - these are actually quite fungible - but what those behaviours">
+  <meta property="og:url"
+    content="https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/">
+  <meta property="og:image" content="https://www.oceanheart.blog/content/images/2024/11/Facebook-Profile-Image.png">
+  <meta property="article:published_time" content="2025-02-27T12:30:38.000Z">
+  <meta property="article:modified_time" content="2025-02-27T12:30:38.000Z">
+  <meta property="article:tag" content="Science">
+
+  <meta property="article:publisher" content="https://www.facebook.com/profile.php?id=61568501601718">
+  <meta property="article:author" content="https://www.facebook.com/profile.php?id=61568501601718">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+    content="Behavioural Economics Series - Habit Theory: Building Adaptive Loops in an AI-Driven World">
+  <meta name="twitter:description"
+    content="For decades, therapy has framed habitual behaviours as triggers, actions, and rewards. Approaching my third decade as a clinician comes with an increasing focus on functional analysis; the key to solutions so often hides not in the behaviour itself - these are actually quite fungible - but what those behaviours">
+  <meta name="twitter:url"
+    content="https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/">
+  <meta name="twitter:image" content="https://www.oceanheart.blog/content/images/2024/11/Twitter-Profile-Image.png">
+  <meta name="twitter:label1" content="Written by">
+  <meta name="twitter:data1" content="Richard Hallett">
+  <meta name="twitter:label2" content="Filed under">
+  <meta name="twitter:data2" content="Science">
+  <meta name="twitter:site" content="@oceanheart_ai">
+  <meta name="twitter:creator" content="@oceanheart_ai">
+  <meta property="og:image:width" content="850">
+  <meta property="og:image:height" content="850">
+
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "oceanheart.ai",
+        "url": "https://www.oceanheart.blog/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.oceanheart.blog/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Richard Hallett",
+        "url": "https://www.oceanheart.blog/author/richard/",
+        "sameAs": [
+            "https://www.oceanheart.ai",
+            "https://www.facebook.com/profile.php?id=61568501601718",
+            "https://twitter.com/oceanheart_ai"
+        ]
+    },
+    "headline": "Behavioural Economics Series - Habit Theory: Building Adaptive Loops in an AI-Driven World",
+    "url": "https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/",
+    "datePublished": "2025-02-27T12:30:38.000Z",
+    "dateModified": "2025-02-27T12:30:38.000Z",
+    "keywords": "Science",
+    "description": "For decades, therapy has framed habitual behaviours as triggers, actions, and rewards. Approaching my third decade as a clinician comes with an increasing focus on functional analysis; the key to solutions so often hides not in the behaviour itself - these are actually quite fungible - but what those behaviours are for.\n\nModern AI can amplify that framework, turning personal data streams—sleep patterns, stress logs, even sentiment analysis from typed messages—into precise cues for micro-interven",
+    "mainEntityOfPage": "https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/"
+}
+    </script>
+
+  <meta name="generator" content="Ghost 5.110">
+  <link rel="alternate" type="application/rss+xml" title="oceanheart.ai" href="https://www.oceanheart.blog/rss/">
+  <script defer="" src="https://cdn.jsdelivr.net/ghost/portal@~2.50/umd/portal.min.js" data-i18n="true"
+    data-ghost="https://www.oceanheart.blog/" data-key="475abb1ff2873683ae8d068467"
+    data-api="https://oceanheart-ai.ghost.io/ghost/api/content/" data-locale="en" crossorigin="anonymous"></script>
+  <style id="gh-members-styles">
+    .gh-post-upgrade-cta-content,
+    .gh-post-upgrade-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      text-align: center;
+      width: 100%;
+      color: #ffffff;
+      font-size: 16px;
+    }
+
+    .gh-post-upgrade-cta-content {
+      border-radius: 8px;
+      padding: 40px 4vw;
+    }
+
+    .gh-post-upgrade-cta h2 {
+      color: #ffffff;
+      font-size: 28px;
+      letter-spacing: -0.2px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .gh-post-upgrade-cta p {
+      margin: 20px 0 0;
+      padding: 0;
+    }
+
+    .gh-post-upgrade-cta small {
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+
+    .gh-post-upgrade-cta a {
+      color: #ffffff;
+      cursor: pointer;
+      font-weight: 500;
+      box-shadow: none;
+      text-decoration: underline;
+    }
+
+    .gh-post-upgrade-cta a:hover {
+      color: #ffffff;
+      opacity: 0.8;
+      box-shadow: none;
+      text-decoration: underline;
+    }
+
+    .gh-post-upgrade-cta a.gh-btn {
+      display: block;
+      background: #ffffff;
+      text-decoration: none;
+      margin: 28px 0 0;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .gh-post-upgrade-cta a.gh-btn:hover {
+      opacity: 0.92;
+    }
+  </style>
+  <script async="" src="https://js.stripe.com/v3/"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.5/umd/sodo-search.min.js"
+    data-key="475abb1ff2873683ae8d068467" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.5/umd/main.css"
+    data-sodo-search="https://oceanheart-ai.ghost.io/" data-locale="en" crossorigin="anonymous"></script>
+
+  <link href="https://www.oceanheart.blog/webmentions/receive/" rel="webmention">
+  <script defer="" src="/public/cards.min.js?v=2ccc108b8b"></script>
+  <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=2ccc108b8b">
+  <script defer="" src="/public/comment-counts.min.js?v=2ccc108b8b"
+    data-ghost-comments-counts-api="https://www.oceanheart.blog/members/api/comments/counts/"></script>
+  <script defer="" src="/public/member-attribution.min.js?v=2ccc108b8b"></script>
+  <style>
+    :root {
+      --ghost-accent-color: #15abf5;
+    }
+  </style>
+  <style>
+    .gh-portal-account-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 0 32px
+    }
+
+    .gh-portal-account-header .gh-portal-avatar {
+      margin: 6px 0 8px !important
+    }
+
+    .gh-portal-account-data {
+      margin-bottom: 40px
+    }
+
+    footer.gh-portal-account-footer {
+      display: flex
+    }
+
+    .gh-portal-account-footer.paid {
+      margin-top: 12px
+    }
+
+    .gh-portal-account-footermenu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .gh-portal-account-footerright {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: flex-end
+    }
+
+    .gh-portal-account-footermenu li {
+      margin-inline-end: 16px
+    }
+
+    .gh-portal-account-footermenu li:last-of-type {
+      margin-inline-end: 0
+    }
+
+    .gh-portal-freeaccount-newsletter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 24px
+    }
+
+    .gh-portal-freeaccount-newsletter .label {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1
+    }
+
+    .gh-portal-free-ctatext {
+      margin-top: -12px
+    }
+
+    .gh-portal-cancelcontinue-container {
+      margin: 24px 0 32px
+    }
+
+    .gh-portal-list-detail .gh-portal-email-notice {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 6px;
+      color: var(--red);
+      font-weight: 500;
+      font-size: 1.25rem;
+      letter-spacing: .2px
+    }
+
+    .gh-portal-email-notice-icon {
+      width: 20px;
+      height: 20px
+    }
+
+    .gh-portal-billing-button-loader {
+      width: 32px;
+      height: 32px;
+      margin-inline-end: -3px;
+      opacity: .6
+    }
+
+    .gh-portal-product-icon {
+      width: 52px;
+      margin-inline-end: 12px;
+      border-radius: 2px
+    }
+
+    .gh-portal-account-discountcontainer {
+      position: relative;
+      display: flex;
+      align-items: center
+    }
+
+    .gh-portal-account-old-price {
+      text-decoration: line-through;
+      color: var(--grey9) !important
+    }
+
+    .gh-portal-account-tagicon {
+      width: 16px;
+      height: 16px;
+      color: var(--brandcolor);
+      margin-inline-end: 5px;
+      z-index: 999
+    }
+
+    @media (max-width: 390px) {
+      .gh-portal-account-footer {
+        padding: 0 !important
+      }
+    }
+
+    @media (max-width: 340px) {
+      .gh-portal-account-footer {
+        padding: 0 !important;
+        flex-wrap: wrap;
+        gap: 12px
+      }
+
+      .gh-portal-account-footer .gh-portal-account-footerright {
+        justify-content: flex-start
+      }
+    }
+
+    .gh-email-suppressed-page-title {
+      margin-bottom: 14px
+    }
+
+    .gh-email-suppressed-page-icon {
+      display: block;
+      width: 38px;
+      height: 38px;
+      margin: 0 auto 18px
+    }
+
+    .gh-email-suppressed-page-text {
+      padding: 0 14px;
+      text-align: center;
+      color: var(--grey6)
+    }
+
+    .gh-email-faq-footer-text {
+      color: var(--grey8)
+    }
+
+    .gh-portal-list-detail.email-newsletter .gh-email-faq-page-button {
+      display: block;
+      margin-top: 3px
+    }
+
+    .gh-portal-action-footer .gh-email-faq-page-button {
+      margin-inline-start: 4px
+    }
+
+    .emailReceivingFAQ .gh-portal-btn-back,
+    .emailReceivingFAQ .gh-portal-btn-back:hover {
+      left: calc(6vmin - 14px)
+    }
+
+    html[dir=rtl] .emailReceivingFAQ .gh-portal-btn-back,
+    html[dir=rtl] .emailReceivingFAQ .gh-portal-btn-back:hover {
+      right: calc(6vmin - 14px);
+      left: unset
+    }
+
+    .emailReceivingFAQ .gh-portal-closeicon-container {
+      right: calc(6vmin - 20px)
+    }
+
+    @media (max-width: 480px) {
+
+      .emailReceivingFAQ .gh-portal-btn-back,
+      .emailReceivingFAQ .gh-portal-btn-back:hover {
+        left: 16px
+      }
+
+      .emailReceivingFAQ .gh-portal-closeicon-container {
+        right: 24px
+      }
+    }
+
+    .gh-email-faq-page-button {
+      color: var(--brandcolor);
+      cursor: pointer;
+      background: none;
+      transition: color linear .1s;
+      font-size: 1.45rem
+    }
+
+    html[dir=rtl] .gh-email-faq-page-button span {
+      transform: scaleX(-1);
+      display: inline-flex
+    }
+  </style>
+  <style>
+    .App {
+      text-align: center
+    }
+
+    .App-logo {
+      height: 40vmin;
+      pointer-events: none
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .App-logo {
+        animation: App-logo-spin infinite 20s linear
+      }
+    }
+
+    .App-header {
+      background-color: #282c34;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: calc(10px + 2vmin);
+      color: #fff
+    }
+
+    .App-link {
+      color: #61dafb
+    }
+
+    @keyframes App-logo-spin {
+      0% {
+        transform: rotate(0)
+      }
+
+      to {
+        transform: rotate(360deg)
+      }
+    }
+  </style>
+</head>
+
+<body class="post-template tag-science">
+
+
+  <header class="header wide-header">
+    <div class="wide-header-container wrapper">
+      <button class="burger-btn" aria-label="Open mobile menu button">
+        <span class="burger-btn__span"></span>
+        <span class="burger-btn__span"></span>
+        <span class="burger-btn__span"></span>
+      </button>
+      <div class="mobile-menu">
+        <div class="mobile-menu-header">
+          <button class="close-menu-btn">
+            <span class="close-menu-btn__span"></span>
+            <span class="close-menu-btn__span"></span>
+          </button>
+          <div class="header-identity header-identity--mobile-menu">
+            <a class="logo" href="https://www.oceanheart.blog"
+              aria-label="https://www.oceanheart.blog Logo and home page link">
+              <span class="logo__title">oceanheart.ai</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list nav-list--mobile-menu">
+            <li class="nav-list__item nav-the-platform nav-list__item--mobile-menu">
+              <a href="https://www.oceanheart.ai" class="nav-list__item-link nav-list__item-link--mobile-menu"
+                aria-label="The Platform Navigation link">
+                The Platform
+              </a>
+            </li>
+            <li class="nav-list__item nav-about nav-list__item--mobile-menu">
+              <a href="https://www.oceanheart.blog/about/" class="nav-list__item-link nav-list__item-link--mobile-menu"
+                aria-label="About Navigation link">
+                About
+              </a>
+            </li>
+            <li class="nav-list__item nav-book nav-list__item--mobile-menu">
+              <a href="https://www.oceanheart.blog/book/" class="nav-list__item-link nav-list__item-link--mobile-menu"
+                aria-label="Book Navigation link">
+                Book
+              </a>
+            </li>
+            <li class="nav-list__item nav-contact nav-list__item--mobile-menu">
+              <a href="https://www.oceanheart.blog/contact/"
+                class="nav-list__item-link nav-list__item-link--mobile-menu" aria-label="Contact Navigation link">
+                Contact
+              </a>
+            </li>
+            <li class="nav-list__item nav-science nav-list__item--mobile-menu">
+              <a href="https://www.oceanheart.blog/tag/science/"
+                class="nav-list__item-link nav-list__item-link--mobile-menu" aria-label="Science Navigation link">
+                Science
+              </a>
+            </li>
+            <li class="nav-list__item nav-story nav-list__item--mobile-menu">
+              <a href="https://www.oceanheart.blog/tag/story/"
+                class="nav-list__item-link nav-list__item-link--mobile-menu" aria-label="Story Navigation link">
+                Story
+              </a>
+            </li>
+            <li class="nav-list__item nav-spirit nav-list__item--mobile-menu">
+              <a href="https://www.oceanheart.blog/tag/spirit/"
+                class="nav-list__item-link nav-list__item-link--mobile-menu" aria-label="Spirit Navigation link">
+                Spirit
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+
+        <div class="mobile-menu-footer">
+          <div class="header-actions header-actions--mobile-menu">
+            <div class="header-actions-main">
+              <button class="action-btn search-btn" title="Search button" aria-label="Search button"
+                data-ghost-search="">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.1057 14.2L17 17M16.0667 9.53333C16.0667 13.1416 13.1416 16.0667 9.53333 16.0667C5.92507 16.0667 3 13.1416 3 9.53333C3 5.92507 5.92507 3 9.53333 3C13.1416 3 16.0667 5.92507 16.0667 9.53333Z"
+                    stroke="#333131" stroke-width="1.4" stroke-linecap="round"></path>
+                </svg> </button>
+              <button class="action-btn switch-theme-btn" aria-label="Dark mode toggle button">
+                <span class="switch-theme-btn-icons">
+                  <svg class="sun-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M8.99981 2.2966V1.80005M8.99981 16.2001V15.7035M15.7033 9.00005H16.1998M1.7998 9.00005H2.29636M13.7403 4.26005L14.0914 3.90894M3.90817 14.0912L4.25929 13.7401M13.7403 13.74L14.0914 14.0912M3.90817 3.9089L4.25929 4.26002M12.9625 8.97289C12.9625 11.1668 11.184 12.9453 8.99011 12.9453C6.7962 12.9453 5.01769 11.1668 5.01769 8.97289C5.01769 6.77899 6.7962 5.00048 8.99011 5.00048C11.184 5.00048 12.9625 6.77899 12.9625 8.97289Z"
+                      stroke="#1D1D1F" stroke-width="1.3" stroke-linecap="round"></path>
+                  </svg> <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M16.6673 11.8333C16.0407 12.0233 15.3759 12.1255 14.6873 12.1255C10.9248 12.1255 7.87466 9.07532 7.87466 5.31273C7.87466 4.62437 7.97674 3.95985 8.16661 3.3335C5.36976 4.1817 3.33398 6.78013 3.33398 9.85406C3.33398 13.6166 6.38411 16.6668 10.1466 16.6668C13.2208 16.6668 15.8194 14.6306 16.6673 11.8333Z"
+                      stroke="#333131" stroke-width="1.4" stroke-linejoin="round"></path>
+                  </svg> </span>
+              </button>
+            </div>
+
+
+
+
+            <a class="main-button" href="https://www.oceanheart.blog/signin" aria-label="Sign in button">
+              <span class="main-button__span">
+                Sign In
+              </span>
+              <span class="main-button__icons">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div class="socials">
+            <a class="socials__link" href="https://www.facebook.com/profile.php?id=61568501601718" target="_blank"
+              rel="noopener noreferrer" aria-label="oceanheart.ai Facebook link"><svg width="24" height="24"
+                viewBox="1 1 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path
+                    d="M13.0596 3.25C7.6419 3.25 3.25 7.6419 3.25 13.0596C3.25 17.9559 6.83722 22.0141 11.5269 22.75V15.8952H9.03612V13.0596H11.5269V10.8984C11.5269 8.43989 12.9913 7.08187 15.232 7.08187C16.3053 7.08187 17.4279 7.27346 17.4279 7.27346V9.68755H16.1909C14.9724 9.68755 14.5924 10.4437 14.5924 11.2195V13.0596H17.313L16.8781 15.8952H14.5924V22.75C19.2819 22.0141 22.8692 17.9559 22.8692 13.0596C22.8692 7.6419 18.4773 3.25 13.0596 3.25Z">
+                  </path>
+                </g>
+              </svg></a>
+            <a class="socials__link" href="https://twitter.com/oceanheart_ai" target="_blank" rel="noopener noreferrer"
+              aria-label="oceanheart.ai Twitter link"><svg width="24" height="24" viewBox="2 0 24 24" fill="#000000"
+                xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path
+                    d="M9.69583 3.25H3.25L10.8569 13.3925L3.66433 21.6666H6.10456L11.9871 14.8995L17.0625 21.6667H23.5083L15.5815 11.0976L22.4034 3.25H19.9632L14.4513 9.59066L9.69583 3.25ZM17.9833 19.825L6.93333 5.09167H8.775L19.825 19.825H17.9833Z">
+                  </path>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <form class="mobile-menu-subscribe" data-members-form="subscribe" data-members-autoredirect="false"
+          novalidate="">
+          <p class="mobile-menu-subscribe__cta-text">
+            oceanheart.ai
+          </p>
+          <p class="mobile-menu-subscribe__cta-subtext">
+            Science, Story &amp; Spirit: Self Growth in the Age of AI
+          </p>
+          <input class="mobile-menu-subscribe-input" data-members-email="" type="email" name="mobile-menu-email-input"
+            id="mobile-menu-email-input" placeholder="Enter your email" aria-label="Your Email Address" required="">
+          <p class="mobile-menu-subscribe-error" data-members-error=""></p>
+
+
+
+          <button aria-label="Subscribe button" class="main-button mobile-menu-subscribe-submit-btn" type="submit">
+            <span class="main-button__span">Subscribe</span>
+            <span class="main-button__icons">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <span class="main-button__loader"><svg xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                style="margin: auto; background: none; shape-rendering: auto;" width="25px" height="25px"
+                viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                <circle cx="50" cy="50" fill="none" stroke="#ffffff" stroke-width="10" r="37"
+                  stroke-dasharray="174.35839227423352 60.119464091411174">
+                  <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s"
+                    values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+                </circle>
+              </svg></span>
+          </button>
+
+          <div class="mobile-menu-subscribe-success">
+            <p class="mobile-menu-subscribe-success__title">
+              Success! Now Check Your Email
+            </p>
+            <p class="mobile-menu-subscribe-success__text">
+              To complete Subscribe, click the confirmation link in your inbox. If
+              it doesn’t arrive within 3 minutes, check your spam folder.
+            </p>
+            <a href="https://www.oceanheart.blog" class="main-button mobile-menu-subscribe-success__btn">
+              <span class="main-button__span">
+                Ok, Thanks
+              </span>
+              <div class="main-button__icons">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </form>
+      </div>
+      <div class="wide-header-identity">
+        <div class="header-identity">
+          <a class="logo" href="https://www.oceanheart.blog"
+            aria-label="https://www.oceanheart.blog Logo and home page link">
+            <span class="logo__title">oceanheart.ai</span>
+          </a>
+        </div>
+      </div>
+      <div class="wide-header-nav">
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-list__item nav-the-platform">
+              <a href="https://www.oceanheart.ai" class="nav-list__item-link nav-list__item-link--main" aria-label="The Platform 
+            Navigation link">
+                The Platform
+              </a>
+            </li>
+            <li class="nav-list__item nav-about">
+              <a href="https://www.oceanheart.blog/about/" class="nav-list__item-link nav-list__item-link--main"
+                aria-label="About 
+            Navigation link">
+                About
+              </a>
+            </li>
+            <li class="nav-list__item nav-book">
+              <a href="https://www.oceanheart.blog/book/" class="nav-list__item-link nav-list__item-link--main"
+                aria-label="Book 
+            Navigation link">
+                Book
+              </a>
+            </li>
+            <li class="nav-list__item nav-contact">
+              <a href="https://www.oceanheart.blog/contact/" class="nav-list__item-link nav-list__item-link--main"
+                aria-label="Contact 
+            Navigation link">
+                Contact
+              </a>
+            </li>
+
+            <li class="nav-list__item nav-list__item--sub-nav" tabindex="0">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 5.375C10.8975 5.375 11.625 4.64746 11.625 3.75C11.625 2.85254 10.8975 2.125 10 2.125C9.10254 2.125 8.375 2.85254 8.375 3.75C8.375 4.64746 9.10254 5.375 10 5.375Z"
+                  fill="#1D1D1F"></path>
+                <path
+                  d="M10 11.625C10.8975 11.625 11.625 10.8975 11.625 10C11.625 9.10254 10.8975 8.375 10 8.375C9.10254 8.375 8.375 9.10254 8.375 10C8.375 10.8975 9.10254 11.625 10 11.625Z"
+                  fill="#1D1D1F"></path>
+                <path
+                  d="M10 17.875C10.8975 17.875 11.625 17.1475 11.625 16.25C11.625 15.3525 10.8975 14.625 10 14.625C9.10254 14.625 8.375 15.3525 8.375 16.25C8.375 17.1475 9.10254 17.875 10 17.875Z"
+                  fill="#1D1D1F"></path>
+              </svg>
+              <ul class="sub-nav-list">
+                <li class="nav-science sub-nav-list__item">
+                  <a class="sub-nav-list__item-link" aria-label="Science Navigation link"
+                    href="https://www.oceanheart.blog/tag/science/">
+                    Science
+                  </a>
+                </li>
+                <li class="nav-story sub-nav-list__item">
+                  <a class="sub-nav-list__item-link" aria-label="Story Navigation link"
+                    href="https://www.oceanheart.blog/tag/story/">
+                    Story
+                  </a>
+                </li>
+                <li class="nav-spirit sub-nav-list__item">
+                  <a class="sub-nav-list__item-link" aria-label="Spirit Navigation link"
+                    href="https://www.oceanheart.blog/tag/spirit/">
+                    Spirit
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+
+
+      </div>
+      <div class="wide-header-actions">
+        <div class="header-actions">
+          <div class="header-actions-main">
+            <button class="action-btn search-btn" title="Search button" aria-label="Search button" data-ghost-search="">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.1057 14.2L17 17M16.0667 9.53333C16.0667 13.1416 13.1416 16.0667 9.53333 16.0667C5.92507 16.0667 3 13.1416 3 9.53333C3 5.92507 5.92507 3 9.53333 3C13.1416 3 16.0667 5.92507 16.0667 9.53333Z"
+                  stroke="#333131" stroke-width="1.4" stroke-linecap="round"></path>
+              </svg> </button>
+            <button class="action-btn switch-theme-btn" aria-label="Dark mode toggle button">
+              <span class="switch-theme-btn-icons">
+                <svg class="sun-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.99981 2.2966V1.80005M8.99981 16.2001V15.7035M15.7033 9.00005H16.1998M1.7998 9.00005H2.29636M13.7403 4.26005L14.0914 3.90894M3.90817 14.0912L4.25929 13.7401M13.7403 13.74L14.0914 14.0912M3.90817 3.9089L4.25929 4.26002M12.9625 8.97289C12.9625 11.1668 11.184 12.9453 8.99011 12.9453C6.7962 12.9453 5.01769 11.1668 5.01769 8.97289C5.01769 6.77899 6.7962 5.00048 8.99011 5.00048C11.184 5.00048 12.9625 6.77899 12.9625 8.97289Z"
+                    stroke="#1D1D1F" stroke-width="1.3" stroke-linecap="round"></path>
+                </svg> <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.6673 11.8333C16.0407 12.0233 15.3759 12.1255 14.6873 12.1255C10.9248 12.1255 7.87466 9.07532 7.87466 5.31273C7.87466 4.62437 7.97674 3.95985 8.16661 3.3335C5.36976 4.1817 3.33398 6.78013 3.33398 9.85406C3.33398 13.6166 6.38411 16.6668 10.1466 16.6668C13.2208 16.6668 15.8194 14.6306 16.6673 11.8333Z"
+                    stroke="#333131" stroke-width="1.4" stroke-linejoin="round"></path>
+                </svg> </span>
+            </button>
+          </div>
+
+
+
+
+          <a class="main-button" href="https://www.oceanheart.blog/signin" aria-label="Sign in button">
+            <span class="main-button__span">
+              Sign In
+            </span>
+            <span class="main-button__icons">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="progress-bar">
+    <div class="progress-bar-main">
+      <span class="progress-bar-main__title">Behavioural Economics Series - Habit Theory: Building Adaptive Loops in an
+        AI-Driven World</span>
+      <span class="progress-bar-main__reading-time">2 min read</span>
+    </div>
+    <div class="progress-bar-share">
+      <div class="share-block">
+        <span class="share-block__span">
+          Share
+        </span>
+        <div class="share-block-links">
+          <a class="share-btn"
+            href="https://www.facebook.com/sharer.php?u=https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/"
+            target="_blank" rel="noopener" aria-label="Share on Facebook">
+            <svg width="24" height="24" viewBox="1 1 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path
+                  d="M13.0596 3.25C7.6419 3.25 3.25 7.6419 3.25 13.0596C3.25 17.9559 6.83722 22.0141 11.5269 22.75V15.8952H9.03612V13.0596H11.5269V10.8984C11.5269 8.43989 12.9913 7.08187 15.232 7.08187C16.3053 7.08187 17.4279 7.27346 17.4279 7.27346V9.68755H16.1909C14.9724 9.68755 14.5924 10.4437 14.5924 11.2195V13.0596H17.313L16.8781 15.8952H14.5924V22.75C19.2819 22.0141 22.8692 17.9559 22.8692 13.0596C22.8692 7.6419 18.4773 3.25 13.0596 3.25Z">
+                </path>
+              </g>
+            </svg> </a>
+          <a class="share-btn"
+            href="https://twitter.com/intent/tweet?url=https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/&amp;text=Behavioural%20Economics%20Series%20-%20Habit%20Theory%3A%20Building%20Adaptive%20Loops%20in%20an%20AI-Driven%20World"
+            target="_blank" rel="noopener" aria-label="Share on Twitter">
+            <svg width="24" height="24" viewBox="2 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path
+                  d="M9.69583 3.25H3.25L10.8569 13.3925L3.66433 21.6666H6.10456L11.9871 14.8995L17.0625 21.6667H23.5083L15.5815 11.0976L22.4034 3.25H19.9632L14.4513 9.59066L9.69583 3.25ZM17.9833 19.825L6.93333 5.09167H8.775L19.825 19.825H17.9833Z">
+                </path>
+              </g>
+            </svg>
+          </a>
+          <a class="share-btn"
+            href="https://reddit.com/submit?url=https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/&amp;media=&amp;description=Behavioural%20Economics%20Series%20-%20Habit%20Theory%3A%20Building%20Adaptive%20Loops%20in%20an%20AI-Driven%20World"
+            target="_blank" rel="noopener" data-pin-do="none" aria-label="Share on Reddit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path
+                d="M14.0017 25.6666C7.5583 25.6666 2.33496 20.4432 2.33496 13.9999C2.33496 7.55659 7.5583 2.33325 14.0017 2.33325C20.4449 2.33325 25.6683 7.55659 25.6683 13.9999C25.6683 20.4432 20.4449 25.6666 14.0017 25.6666ZM21.7833 13.9999C21.7588 13.3291 21.3426 12.7353 20.7202 12.4833C20.0981 12.2314 19.3859 12.3685 18.9016 12.8333C17.5745 11.9311 16.0144 11.4327 14.41 11.3983L15.1683 7.75825L17.665 8.28325C17.7262 8.85318 18.1926 9.29413 18.765 9.32359C19.3374 9.35304 19.8465 8.96226 19.966 8.40163C20.0855 7.84101 19.7799 7.27664 19.2452 7.07014C18.7106 6.86363 18.1049 7.07617 17.8166 7.57158L14.9583 6.99992C14.8638 6.9792 14.7651 6.99715 14.6839 7.04976C14.6028 7.10236 14.5463 7.18526 14.5267 7.27992L13.6633 11.3283C12.0392 11.3527 10.4576 11.8515 9.11329 12.7633C8.62182 12.3008 7.90369 12.1721 7.28223 12.4352C6.66077 12.6982 6.25316 13.3032 6.24293 13.978C6.2327 14.6527 6.62176 15.2698 7.23496 15.5516C7.22182 15.7225 7.22182 15.894 7.23496 16.0649C7.23496 18.6783 10.28 20.8016 14.0367 20.8016C17.7933 20.8016 20.8383 18.6783 20.8383 16.0649C20.8514 15.894 20.8514 15.7225 20.8383 15.5516C21.4258 15.2596 21.7935 14.6559 21.7833 13.9999ZM10.1166 15.1666C10.1166 14.5222 10.639 13.9999 11.2833 13.9999C11.9277 13.9999 12.45 14.5222 12.45 15.1666C12.45 15.8109 11.9277 16.3333 11.2833 16.3333C10.9739 16.3333 10.6771 16.2103 10.4583 15.9915C10.2395 15.7728 10.1166 15.476 10.1166 15.1666ZM16.895 18.3749C16.0672 18.9987 15.0489 19.3162 14.0133 19.2733C12.9778 19.3162 11.9594 18.9987 11.1316 18.3749C11.0288 18.2497 11.0378 18.0669 11.1524 17.9524C11.2669 17.8378 11.4497 17.8288 11.575 17.9316C12.2764 18.4461 13.1326 18.7054 14.0017 18.6666C14.8718 18.714 15.7319 18.4629 16.44 17.9549C16.5233 17.8736 16.6437 17.843 16.7558 17.8745C16.8678 17.9062 16.9546 17.9951 16.9833 18.1079C17.012 18.2207 16.9783 18.3403 16.895 18.4216V18.3749ZM16.685 16.3799C16.0406 16.3799 15.5183 15.8576 15.5183 15.2133C15.5183 14.5689 16.0406 14.0466 16.685 14.0466C17.3293 14.0466 17.8517 14.5689 17.8517 15.2133C17.8645 15.5327 17.7456 15.8435 17.5229 16.0727C17.3001 16.3021 16.993 16.4301 16.6733 16.4266L16.685 16.3799Z"
+                fill="#333131"></path>
+            </svg> </a>
+          <button class="share-btn copyToClipboardBtn" aria-label="Copy to clipboard button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path
+                d="M15.1661 7.58325L16.7574 5.97483C18.1243 4.608 20.3403 4.608 21.7072 5.97483C23.074 7.34167 23.074 9.55775 21.7072 10.9246L16.7574 15.8743C15.3906 17.2412 13.1745 17.2412 11.8077 15.8743M12.8328 19.8333L10.9241 21.7077C9.55726 23.0745 7.34118 23.0745 5.97435 21.7077C4.60751 20.3408 4.60751 18.1247 5.97435 16.7579L10.9241 11.8082C12.2909 10.4413 14.507 10.4413 15.8738 11.8082"
+                stroke="#333131" stroke-width="2" stroke-linecap="round"></path>
+            </svg> <span class="copyToClipboardBtn__tooltip copyToClipboardBtn__tooltip--copied">
+              Link copied!
+            </span>
+            <span class="copyToClipboardBtn__tooltip copyToClipboardBtn__tooltip--error">
+              Error copying link!
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <progress class="reading-progress" value="0" max="100" aria-label="Reading progress"></progress>
+  </div>
+  <main class="page-post post tag-science no-image">
+    <article class="page-post-article">
+      <div class="page-post-head animated-page-head" style="z-index: initial; transform: translate3d(0px, 0px, 0px);">
+
+
+
+        <div class="post-head-container">
+          <div class="post-head-wrapper wrapper">
+            <div class="post-head-letter-container">
+              <a class="post-head-letter" href="/tag/science/" aria-label="Science tag">
+                <span class="post-head-letter__span">Science</span>
+              </a>
+
+              <div class="post-tags">
+                <a class="post-tag" href="/tag/science/" aria-label="Science tag">
+                  Science
+                </a>
+              </div>
+            </div>
+            <div class="post-head-main">
+              <h1 class="post-head-title">
+                Behavioural Economics Series - Habit Theory: Building Adaptive Loops in an AI-Driven World
+              </h1>
+              <div class="post-head-meta">
+                <div class="post-head-author">
+                  <span class="post-head-author__by">By</span>
+                  <a class="post-head-author__link" href="/author/richard/" aria-label="Richard Hallett">Richard
+                    Hallett</a>
+                </div>
+                <span class="post-head-full-date">
+                  <time datetime="2025-02-27">February 27, 2025</time>
+                </span>
+
+                <div class="post-tags">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="page-post__content">
+        <p></p>
+        <p>For decades, therapy has framed habitual behaviours as triggers, actions, and rewards. Approaching my third
+          decade as a clinician comes with an increasing focus on functional analysis; the key to solutions so often
+          hides not in the behaviour itself - these are actually quite fungible - but <em>what those behaviours are
+            for.</em></p>
+        <p>Modern AI can amplify that framework, turning personal data streams—sleep patterns, stress logs, even
+          sentiment analysis from typed messages—into precise cues for micro-interventions. Think of generative AI that
+          crafts real-time nudges to disrupt negative habits; behavioural therapies like ACT and CBT are often most
+          effective when the sticking point is dealt with in the moment. Or perhaps a retrieval-augmented system that
+          references past successes (and failures), reminding a user how they overcame a tough moment last month.</p>
+        <p>So often, it is our network that reinforces our behaviour. This network is multi-layered - intrapersonal
+          networks of cognitive, emotional and sensation patterns, interpersonal networks of repeating social dynamics,
+          the interface we have with our environment and of course the digital networks that now connect all prior
+          layers in both supportive and deranging ways.</p>
+        <p>For example, often when I contact my friends I am deliberately reaching for some kind of validation or
+          support, whether I consciously realise that at the time or not. As we march together relentlessly into an
+          increasingly AI-integrated world, we have the opportunity to deliberately construct positive networks at the
+          individual and collective level.</p>
+        <p>On the developer side, it’s a serious engineering challenge: designing pipelines that glean subtle changes in
+          user context without drowning them in notifications. We want “adaptive loops,” not nagging devices.
+          Notification is fatigue is real - I often find myself going through my phone app list and just smashing the
+          toggle on all but the most crucial. But by meshing habit theory with machine learning, we can scale
+          individualised mental health support in ways that were inconceivable a few years ago.</p>
+        <p></p>
+        <div class="kg-card kg-callout-card kg-callout-card-grey">
+          <div class="kg-callout-emoji">💡</div>
+          <div class="kg-callout-text"><b><strong style="white-space: pre-wrap;">My take:</strong></b> The frontier of
+            habit reprogramming lies in fusing psych frameworks with AI that not only respects user autonomy, but
+            enhances it through more precise network analysis and response. It’s uncharted terrain, for sure, but also
+            the problem space where breakthroughs can happen if we dare to push forward.</div>
+        </div>
+        <hr>
+        <p>Credit to <a href="https://www.wearequantum.co.uk/?ref=oceanheart.blog" rel="noreferrer">Quantum</a> for
+          doing much of the heavy that inspired the thinking behind this post. I've been going through my feature
+          roadmap with a different lens and it's paid dividends. They have a fascinating <a
+            href="https://www.wearequantum.co.uk/playbook?ref=oceanheart.blog" rel="noreferrer">playbook on behavioural
+            economics</a> free to download. It's refreshing to see such innovation in a world where easy and quick wins
+          seem to take most of the pie.</p>
+      </div>
+      <div class="page-post-footer">
+        <div class="page-post-footer-wrapper">
+          <div class="page-post-footer-share">
+            <div class="share-block">
+              <span class="share-block__span">
+                Share
+              </span>
+              <div class="share-block-links">
+                <a class="share-btn"
+                  href="https://www.facebook.com/sharer.php?u=https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/"
+                  target="_blank" rel="noopener" aria-label="Share on Facebook">
+                  <svg width="24" height="24" viewBox="1 1 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                      <path
+                        d="M13.0596 3.25C7.6419 3.25 3.25 7.6419 3.25 13.0596C3.25 17.9559 6.83722 22.0141 11.5269 22.75V15.8952H9.03612V13.0596H11.5269V10.8984C11.5269 8.43989 12.9913 7.08187 15.232 7.08187C16.3053 7.08187 17.4279 7.27346 17.4279 7.27346V9.68755H16.1909C14.9724 9.68755 14.5924 10.4437 14.5924 11.2195V13.0596H17.313L16.8781 15.8952H14.5924V22.75C19.2819 22.0141 22.8692 17.9559 22.8692 13.0596C22.8692 7.6419 18.4773 3.25 13.0596 3.25Z">
+                      </path>
+                    </g>
+                  </svg> </a>
+                <a class="share-btn"
+                  href="https://twitter.com/intent/tweet?url=https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/&amp;text=Behavioural%20Economics%20Series%20-%20Habit%20Theory%3A%20Building%20Adaptive%20Loops%20in%20an%20AI-Driven%20World"
+                  target="_blank" rel="noopener" aria-label="Share on Twitter">
+                  <svg width="24" height="24" viewBox="2 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                      <path
+                        d="M9.69583 3.25H3.25L10.8569 13.3925L3.66433 21.6666H6.10456L11.9871 14.8995L17.0625 21.6667H23.5083L15.5815 11.0976L22.4034 3.25H19.9632L14.4513 9.59066L9.69583 3.25ZM17.9833 19.825L6.93333 5.09167H8.775L19.825 19.825H17.9833Z">
+                      </path>
+                    </g>
+                  </svg>
+                </a>
+                <a class="share-btn"
+                  href="https://reddit.com/submit?url=https://www.oceanheart.blog/habit-theory-building-adaptive-loops-in-an-ai-driven-world-2/&amp;media=&amp;description=Behavioural%20Economics%20Series%20-%20Habit%20Theory%3A%20Building%20Adaptive%20Loops%20in%20an%20AI-Driven%20World"
+                  target="_blank" rel="noopener" data-pin-do="none" aria-label="Share on Reddit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <path
+                      d="M14.0017 25.6666C7.5583 25.6666 2.33496 20.4432 2.33496 13.9999C2.33496 7.55659 7.5583 2.33325 14.0017 2.33325C20.4449 2.33325 25.6683 7.55659 25.6683 13.9999C25.6683 20.4432 20.4449 25.6666 14.0017 25.6666ZM21.7833 13.9999C21.7588 13.3291 21.3426 12.7353 20.7202 12.4833C20.0981 12.2314 19.3859 12.3685 18.9016 12.8333C17.5745 11.9311 16.0144 11.4327 14.41 11.3983L15.1683 7.75825L17.665 8.28325C17.7262 8.85318 18.1926 9.29413 18.765 9.32359C19.3374 9.35304 19.8465 8.96226 19.966 8.40163C20.0855 7.84101 19.7799 7.27664 19.2452 7.07014C18.7106 6.86363 18.1049 7.07617 17.8166 7.57158L14.9583 6.99992C14.8638 6.9792 14.7651 6.99715 14.6839 7.04976C14.6028 7.10236 14.5463 7.18526 14.5267 7.27992L13.6633 11.3283C12.0392 11.3527 10.4576 11.8515 9.11329 12.7633C8.62182 12.3008 7.90369 12.1721 7.28223 12.4352C6.66077 12.6982 6.25316 13.3032 6.24293 13.978C6.2327 14.6527 6.62176 15.2698 7.23496 15.5516C7.22182 15.7225 7.22182 15.894 7.23496 16.0649C7.23496 18.6783 10.28 20.8016 14.0367 20.8016C17.7933 20.8016 20.8383 18.6783 20.8383 16.0649C20.8514 15.894 20.8514 15.7225 20.8383 15.5516C21.4258 15.2596 21.7935 14.6559 21.7833 13.9999ZM10.1166 15.1666C10.1166 14.5222 10.639 13.9999 11.2833 13.9999C11.9277 13.9999 12.45 14.5222 12.45 15.1666C12.45 15.8109 11.9277 16.3333 11.2833 16.3333C10.9739 16.3333 10.6771 16.2103 10.4583 15.9915C10.2395 15.7728 10.1166 15.476 10.1166 15.1666ZM16.895 18.3749C16.0672 18.9987 15.0489 19.3162 14.0133 19.2733C12.9778 19.3162 11.9594 18.9987 11.1316 18.3749C11.0288 18.2497 11.0378 18.0669 11.1524 17.9524C11.2669 17.8378 11.4497 17.8288 11.575 17.9316C12.2764 18.4461 13.1326 18.7054 14.0017 18.6666C14.8718 18.714 15.7319 18.4629 16.44 17.9549C16.5233 17.8736 16.6437 17.843 16.7558 17.8745C16.8678 17.9062 16.9546 17.9951 16.9833 18.1079C17.012 18.2207 16.9783 18.3403 16.895 18.4216V18.3749ZM16.685 16.3799C16.0406 16.3799 15.5183 15.8576 15.5183 15.2133C15.5183 14.5689 16.0406 14.0466 16.685 14.0466C17.3293 14.0466 17.8517 14.5689 17.8517 15.2133C17.8645 15.5327 17.7456 15.8435 17.5229 16.0727C17.3001 16.3021 16.993 16.4301 16.6733 16.4266L16.685 16.3799Z"
+                      fill="#333131"></path>
+                  </svg> </a>
+                <button class="share-btn copyToClipboardBtn" aria-label="Copy to clipboard button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <path
+                      d="M15.1661 7.58325L16.7574 5.97483C18.1243 4.608 20.3403 4.608 21.7072 5.97483C23.074 7.34167 23.074 9.55775 21.7072 10.9246L16.7574 15.8743C15.3906 17.2412 13.1745 17.2412 11.8077 15.8743M12.8328 19.8333L10.9241 21.7077C9.55726 23.0745 7.34118 23.0745 5.97435 21.7077C4.60751 20.3408 4.60751 18.1247 5.97435 16.7579L10.9241 11.8082C12.2909 10.4413 14.507 10.4413 15.8738 11.8082"
+                      stroke="#333131" stroke-width="2" stroke-linecap="round"></path>
+                  </svg> <span class="copyToClipboardBtn__tooltip copyToClipboardBtn__tooltip--copied">
+                    Link copied!
+                  </span>
+                  <span class="copyToClipboardBtn__tooltip copyToClipboardBtn__tooltip--error">
+                    Error copying link!
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="page-post-footer-main">
+            <div class="page-post-footer-meta">
+              <div class="page-post-footer-author">
+                <span class="page-post-footer-author__by">By</span>
+                <div class="page-post-footer-author-names">
+                  <a href="/author/richard/" class="page-post-footer-author-names__name" aria-label="Richard Hallett">
+                    Richard Hallett
+                  </a>
+                </div>
+              </div>
+              <span class="page-post-footer-date">
+                <time datetime="2025-02-27">
+                  February 27, 2025
+                </time>
+              </span>
+            </div>
+
+            <div class="post-tags">
+              <a class="post-tag" href="/tag/science/" aria-label="Science tag">
+                Science
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="post-comments">
+        <div class="post-comment-wrapper">
+          <h2 class="post-comments-title">Comments</h2>
+
+          <div id="ghost-comments-root"><iframe srcdoc="<!DOCTYPE html>" innerref="[object Object]" frameborder="0"
+              title="comments-frame" style="width: 100%; height: 152px;"></iframe></div>
+          <script defer="" src="https://cdn.jsdelivr.net/ghost/comments-ui@~1.0/umd/comments-ui.min.js" data-locale="en"
+            data-ghost-comments="https://www.oceanheart.blog/"
+            data-api="https://oceanheart-ai.ghost.io/ghost/api/content/"
+            data-admin="https://oceanheart-ai.ghost.io/ghost/" data-key="475abb1ff2873683ae8d068467" data-title=""
+            data-count="false" data-post-id="67c04bc528248e0001dcde0f" data-color-scheme="dark"
+            data-avatar-saturation="10" data-accent-color="#15abf5" data-comments-enabled="all"
+            data-publication="oceanheart.ai" crossorigin="anonymous"></script>
+
+        </div>
+      </div>
+      <section class="subscribe-banner">
+        <div class="subscribe-banner__wrapper wrapper">
+          <span class="subscribe-banner__title">Sign Up for Newsletter</span>
+          <form class="subscribe-banner-form" data-members-form="subscribe" data-members-autoredirect="false"
+            novalidate="">
+            <h2 class="subscribe-banner-form__title">oceanheart.ai</h2>
+            <p class="subscribe-banner-form__text">Science, Story &amp; Spirit: Self Growth in the Age of AI</p>
+            <div class="subscribe-banner-form__subscribe">
+              <input class="subscribe-banner-form__input" data-members-email="" type="email"
+                name="subscribe-banner-email-input" id="subscribe-banner-email-input" placeholder="Enter your email"
+                aria-label="Your email address" required="">
+
+
+
+              <button aria-label="Subscribe button" class="main-button subscribe-banner-form-btn" type="submit">
+                <span class="main-button__span">Subscribe</span>
+                <span class="main-button__icons">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+                <span class="main-button__loader"><svg xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    style="margin: auto; background: none; shape-rendering: auto;" width="25px" height="25px"
+                    viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                    <circle cx="50" cy="50" fill="none" stroke="#ffffff" stroke-width="10" r="37"
+                      stroke-dasharray="174.35839227423352 60.119464091411174">
+                      <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s"
+                        values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+                    </circle>
+                  </svg></span>
+              </button>
+
+            </div>
+            <p class="subscribe-banner-form__error" data-members-error=""></p>
+            <div class="subscribe-banner-form-success">
+              <div class="subscribe-banner-form-success__wrapper">
+                <svg class="form-success-icon" width="64px" height="64px" viewBox="0 0 512 512" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+                  <g stroke-width="0"></g>
+                  <g stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g>
+                    <title>success-filled</title>
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g fill="#000000" transform="translate(42.666667, 42.666667)">
+                        <path
+                          d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51296 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.153707,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51296 331.153707,3.55271368e-14 213.333333,3.55271368e-14 Z M293.669333,137.114453 L323.835947,167.281067 L192,299.66912 L112.916693,220.585813 L143.083307,190.4192 L192,239.335893 L293.669333,137.114453 Z">
+                        </path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                <p class="subscribe-banner-form-success__title">
+                  Success! Now Check Your Email
+                </p>
+              </div>
+              <p class="subscribe-banner-form-success__text">
+                To complete Subscribe, click the confirmation link in your inbox. If
+                it doesn’t arrive within 3 minutes, check your spam folder.
+              </p>
+
+
+
+
+              <a class="main-button" href="https://www.oceanheart.blog/" aria-label="Home Page Link">
+                <span class="main-button__span">
+                  Ok, Thanks
+                </span>
+                <span class="main-button__icons">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 6L12 10L8 14" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+      <div class="list-posts-section read-next-section">
+        <h2 class="posts-section-title wrapper">
+          Read Next
+        </h2>
+        <div class="list-posts-section__posts wrapper">
+          <article class="list-post" style="--i: 0">
+            <div class="list-post-heading">
+              <a href="https://www.oceanheart.blog/tag/story/" aria-label="Post tag link"
+                class="list-post-heading__box list-post-heading__box--first-letter">
+                <span>Story</span>
+              </a>
+
+              <div class="post-tags">
+                <a class="post-tag" href="/tag/story/" aria-label="Story tag">
+                  Story
+                </a>
+              </div>
+            </div>
+
+            <div class="list-post__box">
+              <h3 class="list-post__heading">
+                <a class="list-post__heading-link post-link" aria-label="Post title link"
+                  href="/oceanheart-ai-an-introduction/">Oceanheart.ai: An Introduction</a>
+              </h3>
+
+              <div class="post-info">
+                <div class="post-info__box">
+                  <div class="post-info__author-meta">
+                    <span class="post-info__span">By</span>
+                    <a href="/author/richard/" class="post-info__author post-link"
+                      aria-label="Link to page author Richard Hallett">
+                      Richard Hallett
+                    </a>
+                  </div>
+                  <time class="post-info__date" datetime="2025-02-27">
+                    February 27, 2025
+                  </time>
+                </div>
+
+
+                <div class="post-tags">
+                  <div class="post-tag-icons-wrapper">
+                    <div class="post-tag-icon featured-tag" role="note" aria-label="Featured post tag" tabindex="0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <g clip-path="url(#clip0_1606_1714)">
+                          <path
+                            d="M11.6953 6.86108L5.57032 13.4236C5.50541 13.4929 5.41973 13.5391 5.32621 13.5554C5.2327 13.5717 5.13641 13.5572 5.05189 13.514C4.96737 13.4708 4.8992 13.4012 4.85767 13.3159C4.81613 13.2305 4.80349 13.1339 4.82164 13.0408L5.62336 9.03053L2.47172 7.8471C2.40404 7.82178 2.34368 7.78009 2.29603 7.72575C2.24839 7.67141 2.21495 7.60612 2.1987 7.5357C2.18245 7.46529 2.1839 7.39194 2.20291 7.32222C2.22193 7.2525 2.25791 7.18858 2.30766 7.13616L8.43266 0.573658C8.49757 0.504388 8.58324 0.45811 8.67676 0.441805C8.77028 0.4255 8.86656 0.440054 8.95108 0.483271C9.0356 0.526488 9.10377 0.596023 9.14531 0.681382C9.18684 0.766742 9.19949 0.863295 9.18133 0.956471L8.37742 4.97108L11.5291 6.15288C11.5963 6.17837 11.6561 6.22001 11.7034 6.27413C11.7507 6.32826 11.7839 6.39319 11.8001 6.46319C11.8163 6.5332 11.815 6.60612 11.7964 6.67552C11.7777 6.74491 11.7423 6.80864 11.6931 6.86108H11.6953Z"
+                            fill="#495F89"></path>
+                        </g>
+                        <defs>
+                          <clipPath>
+                            <rect width="14" height="14" fill="white"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg> <span class="post-tag-icon__tooltip">
+                        Featured post
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="list-post" style="--i: 1">
+            <div class="list-post-heading">
+              <a href="https://www.oceanheart.blog/tag/story/" aria-label="Post tag link"
+                class="list-post-heading__box list-post-heading__box--first-letter">
+                <span>Story</span>
+              </a>
+
+              <div class="post-tags">
+                <a class="post-tag" href="/tag/story/" aria-label="Story tag">
+                  Story
+                </a>
+              </div>
+            </div>
+
+            <div class="list-post__box">
+              <h3 class="list-post__heading">
+                <a class="list-post__heading-link post-link" aria-label="Post title link"
+                  href="/the-trifecta-of-the-oceanhearted-a-means-to-getting-real-and-helping-the-world-2/">The Trifecta
+                  of the Oceanhearted: a means to getting real and helping the world.</a>
+              </h3>
+
+              <div class="post-info">
+                <div class="post-info__box">
+                  <div class="post-info__author-meta">
+                    <span class="post-info__span">By</span>
+                    <a href="/author/richard/" class="post-info__author post-link"
+                      aria-label="Link to page author Richard Hallett">
+                      Richard Hallett
+                    </a>
+                  </div>
+                  <time class="post-info__date" datetime="2025-02-27">
+                    February 27, 2025
+                  </time>
+                </div>
+
+
+                <div class="post-tags">
+                  <div class="post-tag-icons-wrapper">
+                    <div class="post-tag-icon featured-tag" role="note" aria-label="Featured post tag" tabindex="0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <g clip-path="url(#clip0_1606_1714)">
+                          <path
+                            d="M11.6953 6.86108L5.57032 13.4236C5.50541 13.4929 5.41973 13.5391 5.32621 13.5554C5.2327 13.5717 5.13641 13.5572 5.05189 13.514C4.96737 13.4708 4.8992 13.4012 4.85767 13.3159C4.81613 13.2305 4.80349 13.1339 4.82164 13.0408L5.62336 9.03053L2.47172 7.8471C2.40404 7.82178 2.34368 7.78009 2.29603 7.72575C2.24839 7.67141 2.21495 7.60612 2.1987 7.5357C2.18245 7.46529 2.1839 7.39194 2.20291 7.32222C2.22193 7.2525 2.25791 7.18858 2.30766 7.13616L8.43266 0.573658C8.49757 0.504388 8.58324 0.45811 8.67676 0.441805C8.77028 0.4255 8.86656 0.440054 8.95108 0.483271C9.0356 0.526488 9.10377 0.596023 9.14531 0.681382C9.18684 0.766742 9.19949 0.863295 9.18133 0.956471L8.37742 4.97108L11.5291 6.15288C11.5963 6.17837 11.6561 6.22001 11.7034 6.27413C11.7507 6.32826 11.7839 6.39319 11.8001 6.46319C11.8163 6.5332 11.815 6.60612 11.7964 6.67552C11.7777 6.74491 11.7423 6.80864 11.6931 6.86108H11.6953Z"
+                            fill="#495F89"></path>
+                        </g>
+                        <defs>
+                          <clipPath>
+                            <rect width="14" height="14" fill="white"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg> <span class="post-tag-icon__tooltip">
+                        Featured post
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="list-post" style="--i: 2">
+            <div class="list-post-heading">
+              <time datetime="2024-11-30" class="list-post-heading__box">30</time>
+              <time datetime="2024-11-30" class="list-post-heading__time">November, 2024</time>
+            </div>
+
+            <div class="list-post__box">
+              <h3 class="list-post__heading">
+                <a class="list-post__heading-link post-link" aria-label="Post title link"
+                  href="/spirit-the-art-of-deep-meditation-a-journey-beyond-the-ordinary/">The Art of Deep Meditation: A
+                  Journey Beyond the Ordinary</a>
+              </h3>
+
+              <div class="post-info">
+                <div class="post-info__box">
+                  <div class="post-info__author-meta">
+                    <span class="post-info__span">By</span>
+                    <a href="/author/richard/" class="post-info__author post-link"
+                      aria-label="Link to page author Richard Hallett">
+                      Richard Hallett
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </article>
+          <article class="list-post" style="--i: 3">
+            <div class="list-post-heading">
+              <a href="https://www.oceanheart.blog/tag/science/" aria-label="Post tag link"
+                class="list-post-heading__box list-post-heading__box--first-letter">
+                <span>Science</span>
+              </a>
+
+              <div class="post-tags">
+                <a class="post-tag" href="/tag/science/" aria-label="Science tag">
+                  Science
+                </a>
+              </div>
+            </div>
+
+            <div class="list-post__box">
+              <h3 class="list-post__heading">
+                <a class="list-post__heading-link post-link" aria-label="Post title link"
+                  href="/science-the-commodification-of-human-behavior-in-the-ai-age/">The Commodification of Human
+                  Behavior in the AI Age</a>
+              </h3>
+
+              <div class="post-info">
+                <div class="post-info__box">
+                  <div class="post-info__author-meta">
+                    <span class="post-info__span">By</span>
+                    <a href="/author/richard/" class="post-info__author post-link"
+                      aria-label="Link to page author Richard Hallett">
+                      Richard Hallett
+                    </a>
+                  </div>
+                  <time class="post-info__date" datetime="2024-11-29">
+                    November 29, 2024
+                  </time>
+                </div>
+
+
+                <div class="post-tags">
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="footer__top">
+        <div class="footer__box">
+          <a class="logo" href="https://www.oceanheart.blog"
+            aria-label="https://www.oceanheart.blog Logo and home page link">
+            <span class="logo__title">oceanheart.ai</span>
+          </a>
+          <p class="footer__description">
+            Science, Story &amp; Spirit: Self Growth in the Age of AI
+          </p>
+          <div class="socials">
+            <a class="socials__link" href="https://www.facebook.com/profile.php?id=61568501601718" target="_blank"
+              rel="noopener noreferrer" aria-label="oceanheart.ai Facebook link"><svg width="24" height="24"
+                viewBox="1 1 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path
+                    d="M13.0596 3.25C7.6419 3.25 3.25 7.6419 3.25 13.0596C3.25 17.9559 6.83722 22.0141 11.5269 22.75V15.8952H9.03612V13.0596H11.5269V10.8984C11.5269 8.43989 12.9913 7.08187 15.232 7.08187C16.3053 7.08187 17.4279 7.27346 17.4279 7.27346V9.68755H16.1909C14.9724 9.68755 14.5924 10.4437 14.5924 11.2195V13.0596H17.313L16.8781 15.8952H14.5924V22.75C19.2819 22.0141 22.8692 17.9559 22.8692 13.0596C22.8692 7.6419 18.4773 3.25 13.0596 3.25Z">
+                  </path>
+                </g>
+              </svg></a>
+            <a class="socials__link" href="https://twitter.com/oceanheart_ai" target="_blank" rel="noopener noreferrer"
+              aria-label="oceanheart.ai Twitter link"><svg width="24" height="24" viewBox="2 0 24 24" fill="#000000"
+                xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path
+                    d="M9.69583 3.25H3.25L10.8569 13.3925L3.66433 21.6666H6.10456L11.9871 14.8995L17.0625 21.6667H23.5083L15.5815 11.0976L22.4034 3.25H19.9632L14.4513 9.59066L9.69583 3.25ZM17.9833 19.825L6.93333 5.09167H8.775L19.825 19.825H17.9833Z">
+                  </path>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__navigation">
+          <ul class="nav-list nav-list--secondary">
+            <li class="nav-sign-up nav-list__item--secondary"><a href="#/portal/"
+                class="nav-list__item-link nav-list__item-link--secondary" aria-label="Sign up Navigation link">Sign
+                up</a></li>
+            <li class="nav-test nav-list__item--secondary"><a href="https://www.oceanheart.blog/"
+                class="nav-list__item-link nav-list__item-link--secondary" aria-label="test Navigation link">test</a>
+            </li>
+          </ul>
+
+
+        </div>
+      </div>
+
+      <p class="footer__bottom">
+        Copyright © 2024 oceanheart.ai. Published with <a href="https://ghost.org" target="_blank" rel="noopener"
+          aria-label="Ghost CMS official website link">Ghost</a> and <a href="https://www.oceanheart.blog"
+          aria-label="oceanheart.ai Website link">oceanheart.ai</a>.
+      </p>
+    </div>
+  </footer>
+
+
+  <button class="scroll-top-btn" type="button" title="Scroll to top button" aria-label="Scroll to top button">
+    <span class="scroll-top-btn__icons">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M9.59998 19.2L16 12.8L22.4 19.2" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M9.59998 19.2L16 12.8L22.4 19.2" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </button>
+
+  <script src="https://www.oceanheart.blog/assets/built/main.js?v=2ccc108b8b" defer=""></script>
+
+
+
+
+
+  <div id="ghost-portal-root"><iframe srcdoc="<!DOCTYPE html>" data-testid="portal-trigger-frame" title="portal-trigger"
+      frameborder="0" dir="ltr" class="gh-portal-triggerbtn-iframe"
+      style="z-index: 3999998; position: fixed; bottom: 0px; right: 0px; width: 188px; max-width: 500px; height: 98px; animation: 250ms ease 0s 1 normal none running animation-bhegco; transition: opacity 0.3s; overflow: hidden;"></iframe>
+  </div>
+  <div id="sodo-search-root"></div>
+</body>
+
+</html>

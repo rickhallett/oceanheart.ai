@@ -7,12 +7,3 @@
 [submodule "oceanheart-ui"]
 	path = oceanheart-ui
 	url = github.com:rickhallett/oceanheart-ui.git
-[submodule "ai-sandbox/trend-finder"]
-	path = ai-sandbox/trend-finder
-	url = git@github.com:ericciarla/trendFinder.git
-[submodule "ai-sandbox/open-deep-research"]
-	path = ai-sandbox/open-deep-research
-	url = git@github.com:nickscamara/open-deep-research.git
-[submodule "ai-sandbox/single-file-agents/gitingest"]
-	path = ai-sandbox/single-file-agents/gitingest
-	url = git@github.com:cyclotruc/gitingest.git

@@ -6,8 +6,16 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "aiohttp>=3.11.12",
+    "firecrawl-py>=1.12.0",
+    "frontmatter>=3.0.8",
+    "markdown>=3.7",
+    "markdown-it-py>=3.0.0",
+    "openai>=1.64.0",
+    "pathlib>=1.0.1",
+    "pyyaml>=5.1",
+    "resend>=2.6.0",
     "scrapy>=2.12.0",
 ]
 
 [tool.uv.workspace]
-members = ["examples/gemini-structured-extraction"]
+members = ["examples/gemini-structured-extraction", "single-file-agents/assembly-ai"]
